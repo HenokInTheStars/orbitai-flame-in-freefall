@@ -47,9 +47,10 @@ data/
   processed/        cleaned JSON/CSV the app loads
 scripts/
   clean_data.py     pandas: parse, normalize units, unify schema, write processed/
-web/                Next.js + Tailwind + shadcn/ui, charts as plain SVG (deployed on Vercel) — team decision 2026-11-15, replaces Vite + Plotly
+web/                Next.js + Tailwind (no component library), charts as plain SVG (deployed on Vercel) — team decision 2026-11-15, replaces Vite + Plotly
   public/data/      JSON written by scripts/export_web_data.py (never hand-edited)
-  components/       HabitatSelector, FlameVisual, ParametricPlot, RiskTable, HabitatStressTest, OxygenSoakTimer, StoryMode, Copilot, EarthHub
+  components/       HabitatLab (presets, sliders, stress test, model predictions), FlameVisual, FlamePlayground, Scatter, OxygenSoak, StoryMode, Globe, HomeHero, Copilot (right-side dock on every page), Nav, ui
+  app/              pages: / (Home), /scientists, /explorers, /investigation, /about
   app/api/copilot/  Next.js API route for the copilot (Google Gemini REST API, gemini-3.5-flash; key in GEMINI_API_KEY, never committed) — team decision 2026-11-15
 README.md
 

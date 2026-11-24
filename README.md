@@ -6,7 +6,21 @@ A dashboard that turns NASA Physical Sciences Informatics (PSI) microgravity com
 
 **Our angle: Earth-safe isn't space-safe.** Spacecraft materials are screened with an Earth-gravity test, but in microgravity some materials behave differently, and future habitats may run at a lower pressure with more oxygen. The dashboard shows that gap using real test data. It also marks clearly where no data exists yet, such as partial gravity on the Moon or Mars.
 
-> Status: data pipeline, models, dashboard (5 pages) and copilot built. Run locally: `cd web && pnpm install && pnpm dev`. The copilot needs `GEMINI_API_KEY` in `web/.env.local` (never committed) or in Vercel → Settings → Environment Variables.
+- **Live demo:** TODO(team): add the Vercel URL after deploying
+- **Demo video:** TODO(team): add the video link
+- **Team:** TODO(team): names and roles (also on the About page)
+
+## Run it
+
+```bash
+cd web
+pnpm install
+pnpm dev          # http://localhost:3000
+```
+
+The copilot needs a Google Gemini key: put `GEMINI_API_KEY=...` in `web/.env.local` (git-ignored, never committed) or, on Vercel, in Settings → Environment Variables. Everything else on the site works without it.
+
+**Deploy (Vercel):** import this repo, set **Root Directory** to `web`, add `GEMINI_API_KEY`, deploy. Each push to `main` redeploys.
 
 ## Repository layout
 
@@ -20,7 +34,7 @@ docs/web_pages/    text extracted from public NASA pages (+ SCRAPED_SOURCES.md)
 docs/metadata/     source register, investigation index, change log, category map
 docs/challenge/    challenge requirements
 docs/templates/    data collection forms and checklists
-knowledge_base/    copilot document chunks (to be generated)
+knowledge_base/    copilot document chunks (built by scripts/build_knowledge_base.py)
 validation/        quality gate and copilot test questions
 private/           NOT in git: copyrighted or licence-unchecked files kept for local reference
 data/processed/    cleaned output the app loads (records.json / records.csv / investigations.json)
@@ -29,14 +43,20 @@ scripts/           clean_data.py — parse, normalise units, unify schema
 data/training/     model training tables (every row traceable to its source)
 models/            exported model formulas (JSON), metrics.json, MODEL_CARD.md
 scripts/export_web_data.py — writes the JSON the dashboard loads into web/public/data/
-web/               Next.js + Tailwind dashboard, with the copilot as a Next.js API route (in progress)
+web/               Next.js + Tailwind dashboard; the copilot is a Next.js API route (web/app/api/copilot)
 ```
 
 ## Reproduce the data
 
+Every number on the site is regenerated from the raw files by five scripts, run in this order:
+
 ```bash
-pip install pandas
-python scripts/clean_data.py
+pip install pandas scikit-learn pypdf
+python scripts/clean_data.py            # raw CSVs -> data/processed/
+python scripts/build_training_sets.py   # -> data/training/
+python scripts/train_models.py          # -> models/ (formulas, metrics.json)
+python scripts/export_web_data.py       # -> web/public/data/*.json
+python scripts/build_knowledge_base.py  # -> knowledge_base/ and web/data/kb.json (copilot sources)
 ```
 
 ## Data cleaning
@@ -78,6 +98,15 @@ python scripts/build_training_sets.py
 python scripts/train_models.py
 python scripts/export_web_data.py   # writes web/public/data/*.json for the dashboard
 ```
+
+## Use of AI
+
+- **In the product:** the SI Copilot sends retrieved excerpts from our own sources to the Google Gemini API and asks it to answer only from them, with citations. It is prompt-engineered retrieval (RAG); nothing is fine-tuned. Model predictions on the site come from our own scikit-learn models, not from Gemini.
+- **In building it:** TODO(team): list any AI assistants used to write code or text, as the Space Apps rules require.
+
+## License
+
+Code: MIT (see [LICENSE](LICENSE)). Data and documents keep their own terms: NASA PSI data is CC0 (cite each DOI), Link et al. 2018 is CC BY 4.0, NASA reports are listed with their sources below. See [docs/LICENSE_AND_ATTRIBUTION.md](docs/LICENSE_AND_ATTRIBUTION.md).
 
 ## References
 
