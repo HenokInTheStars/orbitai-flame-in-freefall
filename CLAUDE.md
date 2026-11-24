@@ -51,7 +51,7 @@ web/                Next.js + Tailwind (no component library), charts as plain S
   public/data/      JSON written by scripts/export_web_data.py (never hand-edited)
   components/       HabitatLab (presets, sliders, stress test, model predictions), FlameVisual, FlamePlayground, Scatter, OxygenSoak, StoryMode, Globe, HomeHero, Copilot (right-side dock on every page), Nav, ui
   app/              pages: / (Home), /scientists, /explorers, /investigation, /about
-  app/api/copilot/  Next.js API route for the copilot (Google Gemini REST API, gemini-3.5-flash; key in GEMINI_API_KEY, never committed) — team decision 2026-11-15
+  app/api/copilot/  Next.js API route for the copilot (Google Gemini REST API, gemini-3.5-flash-lite with gemini-3.5-flash fallback; key in GEMINI_API_KEY, never committed) — team decision 2026-11-15
 README.md
 
 Unified record schema (one row per test), fields may be null: investigation, psi_id, doi, test_id, material_or_fuel, geometry, thickness_mm, o2_percent, pressure_kpa, flow_cm_s, flow_direction, gravity ("micro"|"earth"), ignited, spread_rate_mm_s, burn_length_cm, extinction_note, outcome, notes, source_file

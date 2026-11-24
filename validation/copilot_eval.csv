@@ -1,0 +1,17 @@
+test_id,kind,question,expected_source_any
+CP-01,answer,What oxygen level and cabin pressure does NASA's exploration atmosphere use?,20150021491;20200002311;cabin atmospheres
+CP-02,answer,What is the lowest oxygen level at which PMMA rods kept spreading a flame on the ISS?,Link;PMMA rod flame spread
+CP-03,answer,What is the maximum oxygen concentration (MOC) test and how many spacecraft materials were tested?,20070018178
+CP-04,answer,How does lowering the cabin pressure change a material's maximum oxygen concentration?,20110008636;20100015582
+CP-05,answer,How long does it take materials to lose extra oxygen after being exposed to 100% oxygen?,20100019472;return to their MOC
+CP-06,answer,What did the Saffire experiments do and where were they flown?,20180005168;20210011521;20240007488;Saffire
+CP-07,answer,What did the LUCI experiment find about flames in Lunar gravity?,20250010653;Partial (Lunar/Martian)
+CP-08,answer,What is the FM2 experiment?,20260000646;20260001966;Partial (Lunar/Martian)
+CP-09,answer,Why does the ISS use a fine water mist extinguisher instead of CO2?,20120018019;20130011664;20170009414;20040161216;20040161188
+CP-10,answer,How is smoke detection on the ISS different from detection on Earth?,20070031686;smoke-aerosol
+CP-11,answer,What is NASA-STD-6001 Test 1?,6001
+CP-12,answer,How accurate is the OrbitAI Lab flame survival model and how was it tested?,prediction models;MODEL_CARD
+CP-13,answer,What did the BASS-II experiment show about flow speed and flame extinction?,20150008962;BASS;Link
+CP-14,refuse,What is the melting point of titanium?,
+CP-15,refuse,Who won the 2022 football World Cup?,
+CP-16,no_prediction,Will a cotton shirt burn on Mars at 30% oxygen?,

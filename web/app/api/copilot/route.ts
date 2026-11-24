@@ -11,10 +11,17 @@ type Chunk = { chunk_id: string; kind: "paper" | "data"; title: string; ref: str
 const KB = kbJson as Chunk[]
 
 // Team decision 2026-11-15: Google Gemini. Override with GEMINI_MODEL in the environment.
-// Timed on 2026-11-15: 3.5 Flash ~8 s, 3.5 Flash Lite ~2 s; 3.8 Flash and the "latest" alias timed out.
-const MODEL = process.env.GEMINI_MODEL ?? "gemini-3.5-flash"
-const FALLBACK_MODEL = "gemini-3.5-flash-lite"
-const TIMEOUT_MS = 20_000
+// Re-tested 2026-11-24 (scripts/eval_copilot.py): 3.5 Flash Lite answered every call in ~1-3 s and passed the
+// evaluation; 3.5 Flash was rate-limited (429) or took >20 s, and 3.8 Flash was overloaded. So Lite is the main
+// model, retried once after a short pause on overload, with 3.5 Flash as the last resort.
+const MODEL = process.env.GEMINI_MODEL ?? "gemini-3.5-flash-lite"
+const FALLBACK_MODEL = "gemini-3.5-flash"
+const ATTEMPTS = [MODEL, MODEL, FALLBACK_MODEL]
+const TIMEOUT_MS = 9_000 // 3 attempts + pauses stay under maxDuration
+const RETRY_PAUSE_MS = 1_500
+
+// Vercel: allow the function enough time for retrieval + up to three model calls.
+export const maxDuration = 30
 const TOP_K = 8
 const MAX_QUESTION = 500
 
@@ -60,7 +67,8 @@ Rules:
 - Answer ONLY from the numbered source excerpts in the user message. Cite every factual sentence with [n].
 - If the excerpts do not answer the question, say plainly that our sources do not cover it. Do not use outside knowledge, and never invent numbers, papers or results.
 - Say "estimate" for anything from our models, and "measured" or "calculated" when the source says so.
-- No Moon or Mars predictions: if asked, say what was measured and that the rest is unknown.
+- If the excerpts answer the question, answer directly; do not open with a disclaimer.
+- No Moon or Mars predictions: only if the question asks about the Moon or Mars, say what was measured and that the rest is unknown.
 - Write for a curious non-expert: short paragraphs, plain words, at most about 180 words.`
 
 export async function POST(req: Request) {
@@ -85,7 +93,7 @@ export async function POST(req: Request) {
   }
   const context = found.map((c, i) => `[${i + 1}] ${c.title} — ${c.ref}\n${c.text}`).join("\n\n---\n\n")
 
-  // Gemini REST API: POST /v1beta/models/{model}:generateContent. Try the main model, then the faster fallback.
+  // Gemini REST API: POST /v1beta/models/{model}:generateContent. Main model, one retry, then the fallback.
   const body = JSON.stringify({
     systemInstruction: { parts: [{ text: SYSTEM }] },
     contents: [{ role: "user", parts: [{ text: `Source excerpts:\n\n${context}\n\n---\n\nQuestion: ${question}` }] }],
@@ -93,7 +101,10 @@ export async function POST(req: Request) {
   })
   let res: Response | null = null
   let lastError = ""
-  for (const model of [MODEL, FALLBACK_MODEL]) {
+  let usedModel = ""
+  for (const [attempt, model] of ATTEMPTS.entries()) {
+    if (attempt > 0 && (res?.status === 429 || res?.status === 503)) await new Promise((r) => setTimeout(r, RETRY_PAUSE_MS))
+    usedModel = model
     const controller = new AbortController()
     const timer = setTimeout(() => controller.abort(), TIMEOUT_MS)
     try {
@@ -134,6 +145,7 @@ export async function POST(req: Request) {
     return Response.json({
       answer: answer || "Our sources don't cover that question.",
       sources: found.map((c, i) => ({ id: String(i + 1), title: c.title, ref: c.ref })),
+      model: usedModel,
     })
   } catch {
     return Response.json({ error: "The copilot could not read the answer. Please try again." }, { status: 502 })

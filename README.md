@@ -35,7 +35,7 @@ docs/metadata/     source register, investigation index, change log, category ma
 docs/challenge/    challenge requirements
 docs/templates/    data collection forms and checklists
 knowledge_base/    copilot document chunks (built by scripts/build_knowledge_base.py)
-validation/        quality gate and copilot test questions
+validation/        quality gate and copilot evaluation (COPILOT_EVAL.md, scripts/eval_copilot.py)
 private/           NOT in git: copyrighted or licence-unchecked files kept for local reference
 data/processed/    cleaned output the app loads (records.json / records.csv / investigations.json)
 scripts/           clean_data.py — parse, normalise units, unify schema
@@ -98,6 +98,10 @@ python scripts/build_training_sets.py
 python scripts/train_models.py
 python scripts/export_web_data.py   # writes web/public/data/*.json for the dashboard
 ```
+
+## Copilot evaluation
+
+The copilot is scored on 16 questions: 13 it should answer with the right source, 2 off-topic questions it should decline, and 1 Mars prediction it should refuse to make. With the final setup it passes **14–16 of 16** (answers vary between runs) in 1–3 s. Method, every run and every failure: [validation/COPILOT_EVAL.md](validation/COPILOT_EVAL.md). Re-run it with `python scripts/eval_copilot.py http://localhost:3000`, which calls the Gemini API once per question.
 
 ## Use of AI
 
@@ -166,7 +170,7 @@ Comparison caution: the `moc_*` and `pressure_*` tables come from **Earth-gravit
 - d3-geo (ISC), https://d3js.org/d3-geo, topojson-client (ISC) and world-atlas (ISC; map data from Natural Earth, public domain): the home-page globe
 - lucide-react (ISC), https://lucide.dev/: icons
 - clsx (MIT)
-- Google Gemini API (REST `generateContent`, no SDK), https://ai.google.dev/: the SI Copilot API route, model `gemini-3.5-flash` with fallback `gemini-3.5-flash-lite`. Retrieval (BM25) + prompting over our own sources; not fine-tuned
+- Google Gemini API (REST `generateContent`, no SDK), https://ai.google.dev/: the SI Copilot API route, model `gemini-3.5-flash-lite` (one retry), with fallback `gemini-3.5-flash`. Retrieval (BM25) + prompting over our own sources; not fine-tuned
 - Fonts via Google Fonts (SIL Open Font License): Orbitron, Inter, JetBrains Mono
 - UI layout inspired by the team's own design mock-up
 

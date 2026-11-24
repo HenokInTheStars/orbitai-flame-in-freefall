@@ -44,9 +44,17 @@ def ref_for(pdf: Path):
     return f"NASA PSI overview: {pdf.stem}", "https://psi.nasa.gov/"
 
 
+# Kept in docs/ as background, but not indexed: pages of numeric property tables that say nothing about
+# fire safety. Copilot evaluation (validation/copilot_eval.csv, CP-14) showed the thermo tables, half of all
+# chunks, led it to "answer" unrelated questions from them.
+NOT_INDEXED = {"GAS_PROPERTIES"}
+
+
 def paper_chunks():
     out = []
     for pdf in sorted(PAPERS.rglob("*.pdf")):
+        if pdf.parent.name in NOT_INDEXED:
+            continue
         ref, url = ref_for(pdf)
         title = pdf.stem.replace("_", " ")
         try:
@@ -114,12 +122,18 @@ def data_chunks():
 
     metrics = json.loads((WEBDATA / "metrics.json").read_text(encoding="utf-8"))
     m1, m2, m3 = metrics["model1_flame_survives"], metrics["model2_spread_rate"], metrics["model3_flex_burning"]
+    rounds = list(m1["per_round"].values())
     add("data-models", "OrbitAI Lab prediction models and their test scores", "models/metrics.json, models/MODEL_CARD.md",
-        f"Model 1 (logistic regression, Earth PMMA rods, {m1['rows']} rows, leave-one-rod-size-out): AUC {m1['model']['auc']}, "
-        f"balanced accuracy {m1['model']['balanced_accuracy']}; caught every flame-out in all 4 rounds. "
+        f"Model 1, the flame survival model (does a flame keep spreading on an Earth PMMA rod; logistic regression on O2 and rod size; "
+        f"{m1['rows']} tests; tested by leaving out one rod size at a time, {len(rounds)} rounds): accuracy {m1['model']['accuracy']:.2f}, "
+        f"balanced accuracy {m1['model']['balanced_accuracy']:.2f}, AUC {m1['model']['auc']:.2f} "
+        f"(always guessing 'keeps burning' scores {m1['model']['always_majority_accuracy']:.2f}). Across the rounds it caught "
+        f"{sum(r['flame_outs_caught'] for r in rounds)} of {sum(r['flame_outs'] for r in rounds)} flame-outs and gave "
+        f"{sum(r['false_alarms'] for r in rounds)} false alarms. "
         f"Earth model 50% O2 line vs ISS lowest burning O2: {json.dumps(m1['earth_50pct_line_vs_iss_measured'])}. "
-        f"Model 2 (ridge, spread rate, {m2['rows']} rows): R2 {m2['model']['r2']}, MAE {m2['model']['mae_mm_s']} mm/s. "
-        f"Model 3 (ridge, FLEX burning rate, {m3['rows']} tests): R2 {m3['model']['r2']}; coefficients per unit {json.dumps(m3['coef_per_unit'])}. "
+        f"Model 2, the flame spread rate model (ridge regression, PMMA rods on the ISS and on Earth, {m2['rows']} rows): "
+        f"R2 {m2['model']['r2']:.2f}, MAE {m2['model']['mae_mm_s']} mm/s (predicting the average scores R2 {m2['baseline_mean']['r2']:.2f}). "
+        f"Model 3, the FLEX droplet burning rate model (ridge regression, {m3['rows']} tests): R2 {m3['model']['r2']:.2f}; coefficients per unit {json.dumps(m3['coef_per_unit'])}. "
         "All are statistical models (scikit-learn), not fine-tuned language models. No microgravity survival model and no Moon/Mars model.")
 
     inv = json.loads((WEBDATA / "investigations.json").read_text(encoding="utf-8"))
