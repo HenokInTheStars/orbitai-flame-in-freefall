@@ -1,0 +1,13 @@
+flight_sample,investigation,material,sample_length_cm,sample_width_cm,flow_cm_s,flow_direction,pressure_kpa,o2_percent,pressure_psia_converted,duct_height_cm,steady_flame_size_cm,max_flame_size_cm,spread_rate_mm_s,notes,source
+I-1,Saffire-I,SIBAL,94,41,20,concurrent,100,21,14.5,46,4,6.2,1.8,flame power ~1200 +/- 300 W; burned ~400-420 s,"NTRS 20210011521 (Urban et al. 2021, ICES-2021-266); NTRS 20180005168 (Urban et al. 2017)"
+II-5,Saffire-II,SIBAL,30,5,20,concurrent,100,21,14.5,46,4,4,,,"NTRS 20210011521 (Urban et al. 2021, ICES-2021-266)"
+II-6,Saffire-II,SIBAL,30,5,25,concurrent,100,21,14.5,46,5,5,,,"NTRS 20210011521 (Urban et al. 2021, ICES-2021-266)"
+III-1,Saffire-III,SIBAL,94,41,25,concurrent,100,21,14.5,46,5,8.2,2.3,burned ~320 s; PSI-100 experimental table lists 30 cm/s for this sample - sources disagree,"NTRS 20210011521 (Urban et al. 2021, ICES-2021-266); NTRS 20180005168 (Urban et al. 2017)"
+IV-1,Saffire-IV,SIBAL cloth,50,41,20,concurrent,100.0,22.0,14.5,30,8.5,11.0,,,"NTRS 20210011521 (Urban et al. 2021, ICES-2021-266); NTRS 20240007488 (Saffire VI, ICES 2024)"
+IV-2,Saffire-IV,"PMMA, 2-sided, 1 cm thick",18,,20,concurrent,100.0,22.0,14.5,30,,,,,"NTRS 20210011521 (Urban et al. 2021, ICES-2021-266)"
+V-2,Saffire-V,Cotton jersey,50,41,20,concurrent,70.7,26.2,10.25,30,10.0,14.0,,,"NTRS 20210011521 (Urban et al. 2021, ICES-2021-266); NTRS 20240007488 (Saffire VI, ICES 2024)"
+V-3,Saffire-V,"PMMA, 1-sided, 0.5 cm thick",18,,20,concurrent,71.3,25.4,10.34,30,,,,,"NTRS 20210011521 (Urban et al. 2021, ICES-2021-266)"
+V-4,Saffire-V,Structured PMMA,20,,20,opposed,72.6,25.7,10.53,30,,,,,"NTRS 20210011521 (Urban et al. 2021, ICES-2021-266)"
+VI-2,Saffire-VI,SIBAL cloth,50,,20,concurrent,54.1,31.0,7.85,30,,,,exploration-like atmosphere,"NTRS 20240007488 (Saffire VI, ICES 2024)"
+VI-3,Saffire-VI,"PMMA, 2-sided, 1 cm thick",18,,20,concurrent,54.6,30.3,7.92,30,,,,"flow reduced 20->5 cm/s at 1120 s, stopped at 1420 s","NTRS 20240007488 (Saffire VI, ICES 2024)"
+VI-4,Saffire-VI,"PMMA, 1-sided, 0.5 cm thick",18,,20,concurrent,55.2,28.8,8.01,30,,,,,"NTRS 20240007488 (Saffire VI, ICES 2024)"

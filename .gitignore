@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+.env.local
+.vercel/
+__pycache__/
+.DS_Store
+
+# Copyrighted / licence-unchecked material: kept locally, never pushed (see docs/web_pages/SCRAPED_SOURCES.md)
+private/

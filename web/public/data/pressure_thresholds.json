@@ -1,0 +1,79 @@
+[
+ {
+  "material": "Epoxy/glass (NEMA G-11)",
+  "composition": "epoxy/fiberglass laminate",
+  "thickness": "0.06 in",
+  "ulpi_psia_in_99_8pct_o2": 0.9,
+  "mtp_psia_in_99_8pct_o2": 0.8,
+  "uloi_percent_o2_at_10_2psia": 28.6,
+  "moc_percent_o2_at_10_2psia": 24,
+  "notes": "checked against the scanned Table 2 image; column headers ULPI / MTP / ULOI / MOC confirmed",
+  "source": "NTRS 20100015582 (Hirsch et al.), Tables 1-2"
+ },
+ {
+  "material": "Udel P1700",
+  "composition": "polysulfone",
+  "thickness": "0.06 in",
+  "ulpi_psia_in_99_8pct_o2": 1.0,
+  "mtp_psia_in_99_8pct_o2": 0.9,
+  "uloi_percent_o2_at_10_2psia": 31.7,
+  "moc_percent_o2_at_10_2psia": 29,
+  "notes": "checked against the scanned Table 2 image; column headers ULPI / MTP / ULOI / MOC confirmed",
+  "source": "NTRS 20100015582 (Hirsch et al.), Tables 1-2"
+ },
+ {
+  "material": "Kydex 100",
+  "composition": "PVC/PMMA alloy",
+  "thickness": "0.05 in",
+  "ulpi_psia_in_99_8pct_o2": 1.8,
+  "mtp_psia_in_99_8pct_o2": 0.6,
+  "uloi_percent_o2_at_10_2psia": 33.5,
+  "moc_percent_o2_at_10_2psia": 32,
+  "notes": "ULPI 1.8 confirmed against the scanned Table 2 image (large gap to MTP 0.6 is as printed); column headers ULPI / MTP / ULOI / MOC confirmed",
+  "source": "NTRS 20100015582 (Hirsch et al.), Tables 1-2"
+ },
+ {
+  "material": "Solimide TA-301",
+  "composition": "polyimide foam",
+  "thickness": "0.12 in",
+  "ulpi_psia_in_99_8pct_o2": 0.7,
+  "mtp_psia_in_99_8pct_o2": 0.5,
+  "uloi_percent_o2_at_10_2psia": 29.3,
+  "moc_percent_o2_at_10_2psia": 28,
+  "notes": "checked against the scanned Table 2 image; column headers ULPI / MTP / ULOI / MOC confirmed",
+  "source": "NTRS 20100015582 (Hirsch et al.), Tables 1-2"
+ },
+ {
+  "material": "Melinex 515",
+  "composition": "polyethylene terephthalate film",
+  "thickness": "0.005 in",
+  "ulpi_psia_in_99_8pct_o2": 0.9,
+  "mtp_psia_in_99_8pct_o2": 0.4,
+  "uloi_percent_o2_at_10_2psia": 21.2,
+  "moc_percent_o2_at_10_2psia": 20,
+  "notes": "checked against the scanned Table 2 image; column headers ULPI / MTP / ULOI / MOC confirmed",
+  "source": "NTRS 20100015582 (Hirsch et al.), Tables 1-2"
+ },
+ {
+  "material": "Nomex HT90-40",
+  "composition": "aramid fabric",
+  "thickness": "0.013 in",
+  "ulpi_psia_in_99_8pct_o2": 0.6,
+  "mtp_psia_in_99_8pct_o2": 0.5,
+  "uloi_percent_o2_at_10_2psia": 28.5,
+  "moc_percent_o2_at_10_2psia": 25,
+  "notes": "checked against the scanned Table 2 image; column headers ULPI / MTP / ULOI / MOC confirmed",
+  "source": "NTRS 20100015582 (Hirsch et al.), Tables 1-2"
+ },
+ {
+  "material": "Ultem 1000",
+  "composition": "polyetherimide film",
+  "thickness": "0.01 in",
+  "ulpi_psia_in_99_8pct_o2": 1.5,
+  "mtp_psia_in_99_8pct_o2": 0.9,
+  "uloi_percent_o2_at_10_2psia": 26.5,
+  "moc_percent_o2_at_10_2psia": 24,
+  "notes": "checked against the scanned Table 2 image; column headers ULPI / MTP / ULOI / MOC confirmed",
+  "source": "NTRS 20100015582 (Hirsch et al.), Tables 1-2"
+ }
+]

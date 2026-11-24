@@ -1,0 +1,13 @@
+scenario,porosity,material,thickness,thickness_unit,moc_percent_o2,time_to_moc_hms,time_to_moc_hours,time_to_moc_minutes,exceeds_30_min_rule,notes,source
+entrapment (1 cm gap),non-porous,Tiburon surgical drape,0.00022,in,20,05:10:01,5.167,310.0,yes,,"NTRS 20100019472 (Harper, Smith, Juarez, Hirsch)"
+entrapment (1 cm gap),non-porous,Spandex-covered Viton (Mosite) foam,0.00794,in,18,447:18:21,447.306,26838.4,yes,,"NTRS 20100019472 (Harper, Smith, Juarez, Hirsch)"
+entrapment (1 cm gap),non-porous,Minicel polyethylene foam,0.05100,in,20,36:55:01,36.917,2215.0,yes,,"NTRS 20100019472 (Harper, Smith, Juarez, Hirsch)"
+entrapment (1 cm gap),non-porous,Minicel polyethylene foam with Nomex covering,0.05169,in,28,13:34:59,13.583,815.0,yes,,"NTRS 20100019472 (Harper, Smith, Juarez, Hirsch)"
+entrapment (1 cm gap),non-porous,Zotek F-30 foam,0.0254,in,36,04:49:59,4.833,290.0,yes,,"NTRS 20100019472 (Harper, Smith, Juarez, Hirsch)"
+entrapment (1 cm gap),porous,EMU Liquid-Cooled Ventilation Garment (LCVG),0.00022,m (as printed),23,00:00:26,0.007,0.4,no,time printed as 00:00:026,"NTRS 20100019472 (Harper, Smith, Juarez, Hirsch)"
+entrapment (1 cm gap),porous,Pyrell polyurethane foam,0.0508,m (as printed),19,00:00:10,0.003,0.2,no,,"NTRS 20100019472 (Harper, Smith, Juarez, Hirsch)"
+saturation (0.5 in cube),non-porous,Spandex-covered Viton (Mosite) foam,0.50,as printed,18,10000:00:00,10000.0,600000.0,yes,internal O2 2.47%,"NTRS 20100019472 (Harper, Smith, Juarez, Hirsch)"
+saturation (0.5 in cube),non-porous,Minicel polyethylene foam,0.50,as printed,20,3050:00:00,3050.0,183000.0,yes,internal O2 1.48%,"NTRS 20100019472 (Harper, Smith, Juarez, Hirsch)"
+saturation (0.5 in cube),non-porous,Minicel polyethylene foam with Nomex covering,0.50,as printed,28,350:00:00,350.0,21000.0,yes,internal O2 1.98%,"NTRS 20100019472 (Harper, Smith, Juarez, Hirsch)"
+saturation (0.5 in cube),non-porous,Zotek F-30 foam,0.50,as printed,36,121:00:00,121.0,7260.0,yes,internal O2 2.54%,"NTRS 20100019472 (Harper, Smith, Juarez, Hirsch)"
+saturation (0.5 in cube),porous,Pyrell polyurethane foam,0.50,as printed,19,00:02:10,0.036,2.2,no,,"NTRS 20100019472 (Harper, Smith, Juarez, Hirsch)"

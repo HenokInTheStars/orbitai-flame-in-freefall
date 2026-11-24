@@ -1,0 +1,174 @@
+{
+ "model1_flame_survives": {
+  "scope": "Earth gravity (1-g), black PMMA rods, opposed flow 2 or 25 cm/s (Link 2018 Table S2)",
+  "rows": 46,
+  "independent_groups": 4,
+  "label_1": 37,
+  "label_0": 9,
+  "cv": "leave-one-rod-diameter-out",
+  "model": {
+   "accuracy": 0.8261,
+   "balanced_accuracy": 0.8919,
+   "auc": 0.9474,
+   "always_majority_accuracy": 0.8043
+  },
+  "o2_only_model": {
+   "accuracy": 0.7826,
+   "balanced_accuracy": 0.8228,
+   "auc": 0.8964,
+   "always_majority_accuracy": 0.8043
+  },
+  "per_round": {
+   "0.32 cm held out": {
+    "rows": 13,
+    "accuracy": 0.9231,
+    "flame_outs": 2,
+    "flame_outs_caught": 2,
+    "false_alarms": 1,
+    "missed_flame_outs": 0
+   },
+   "0.64 cm held out": {
+    "rows": 13,
+    "accuracy": 0.6923,
+    "flame_outs": 3,
+    "flame_outs_caught": 3,
+    "false_alarms": 4,
+    "missed_flame_outs": 0
+   },
+   "0.95 cm held out": {
+    "rows": 10,
+    "accuracy": 0.9,
+    "flame_outs": 2,
+    "flame_outs_caught": 2,
+    "false_alarms": 1,
+    "missed_flame_outs": 0
+   },
+   "1.27 cm held out": {
+    "rows": 10,
+    "accuracy": 0.8,
+    "flame_outs": 2,
+    "flame_outs_caught": 2,
+    "false_alarms": 2,
+    "missed_flame_outs": 0
+   }
+  },
+  "sensitivity_with_flagged_rows": {
+   "rows": 46,
+   "accuracy": 0.8261,
+   "balanced_accuracy": 0.8919,
+   "auc": 0.9474,
+   "always_majority_accuracy": 0.8043,
+   "o2_coef_per_pct": 2.1135
+  },
+  "coef_per_unit": {
+   "o2_percent": 2.1135,
+   "inv_rod_d": 0.7118
+  },
+  "earth_50pct_line_vs_iss_measured": {
+   "0.32 cm": {
+    "earth_model_o2_at_50pct": 18.0,
+    "iss_lowest_o2_with_flame_spread_measured": null
+   },
+   "0.64 cm": {
+    "earth_model_o2_at_50pct": 18.5,
+    "iss_lowest_o2_with_flame_spread_measured": 16.8
+   },
+   "0.95 cm": {
+    "earth_model_o2_at_50pct": 18.7,
+    "iss_lowest_o2_with_flame_spread_measured": 17.5
+   },
+   "1.27 cm": {
+    "earth_model_o2_at_50pct": 18.75,
+    "iss_lowest_o2_with_flame_spread_measured": 17.6
+   }
+  },
+  "rejected_variants": {
+   "combined_all_conditions": {
+    "accuracy": 0.8077,
+    "balanced_accuracy": 0.8656,
+    "auc": 0.9014,
+    "always_majority_accuracy": 0.8538,
+    "accuracy_by_condition": {
+     "earth / PMMA rod": 0.739,
+     "micro / PMMA rod": 1.0,
+     "micro / SIBAL fabric (thin)": 0.606
+    },
+    "why_rejected": "high overall score comes from microgravity PMMA rows that are all 'burned'; weak (~0.6) inside the conditions that contain flame-outs"
+   },
+   "sibal_microgravity_o2_x_flow": {
+    "accuracy": 0.6364,
+    "balanced_accuracy": 0.6826,
+    "auc": 0.787,
+    "always_majority_accuracy": 0.697,
+    "rows": 33,
+    "label_0": 10,
+    "why_rejected": "does not beat always-guessing-'burns' accuracy; show the measured flow-vs-O2 map instead"
+   }
+  },
+  "microgravity_statement": "No model for microgravity PMMA: all 51 ISS rows (Link 2018 Table S1) show flame spread, down to 16.8% O2; extinction points were not tabulated in the paper."
+ },
+ "model2_spread_rate": {
+  "rows": 88,
+  "independent_tests": 22,
+  "model": {
+   "mae_mm_s": 0.0178,
+   "r2": 0.5311
+  },
+  "baseline_mean": {
+   "mae_mm_s": 0.0276,
+   "r2": -0.1093
+  },
+  "target_range_mm_s": [
+   0.0135,
+   0.2357
+  ],
+  "sensitivity_with_flagged_rows": {
+   "rows": 89,
+   "mae_mm_s": 0.0188,
+   "r2": 0.5044
+  },
+  "coef_per_unit": {
+   "o2_percent": 0.0187,
+   "log_flow": -0.0044,
+   "inv_rod_d": 0.0386,
+   "is_micro": 0.0774,
+   "micro_x_o2": -0.004
+  }
+ },
+ "model3_flex_burning": {
+  "rows": 256,
+  "independent_tests": 255,
+  "model": {
+   "mae": 0.0476,
+   "r2": 0.7109
+  },
+  "baseline_mean": {
+   "mae": 0.107,
+   "r2": -0.0042
+  },
+  "without_droplet_diameter": {
+   "mae": 0.0551,
+   "r2": 0.613
+  },
+  "sensitivity_with_flagged_rows": {
+   "rows": 257,
+   "mae": 0.048,
+   "r2": 0.7087
+  },
+  "coef_per_unit": {
+   "o2_percent": 0.019,
+   "pressure_kpa": 0.0003,
+   "co2_fraction": -0.155,
+   "he_fraction": 0.5003,
+   "is_heptane": 0.0321,
+   "droplet_d_mm": -0.0642
+  }
+ },
+ "physics_checks": {
+  "Model 1: more O2 -> higher survival chance": true,
+  "Model 2: more O2 -> faster spread (Earth)": true,
+  "Model 2: more O2 -> faster spread (microgravity)": true,
+  "Model 2: thinner rod -> faster spread": true,
+  "Model 3: more O2 -> faster burning": true
+ }
+}

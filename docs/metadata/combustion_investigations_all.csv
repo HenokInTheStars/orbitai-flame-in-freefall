@@ -1,0 +1,24 @@
+short_name,title,psi_id,doi,on_nasa_combustion_page,tables_collected,notes
+ACME BRE,Advanced Combustion via Microgravity Experiments Burning Rate Emulator,,,yes,no,TODO: PSI ID/DOI not found in DataCite - check psi.nasa.gov
+ACME E-FIELD Flames,Advanced Combustion via Microgravity Experiments Electric Field Flames,PSI-22,,yes,yes,TODO: DOI not found in DataCite - check psi.nasa.gov
+ACME S-Flames,Advanced Combustion via Microgravity Experiments - Structure and Response of Spherical Diffusion Flames,PSI-23,10.60555/k57n-p030,yes,no,
+ACME Flame Design,Advanced Combustion via Microgravity Experiments / Flame Design,PSI-10,10.60555/w4zy-bt45,no (DataCite only),no,
+ACME Coflow,Advanced Combustion via Microgravity Experiments / Coflow Laminar Diffusion Flame,PSI-21,10.60555/23e1-9950,no (DataCite only),no,
+ACME CFI-G,Advanced Combustion via Microgravity Experiments / Cool Flames Investigation with Gases,PSI-159,10.60555/cyt1-kh64,no (DataCite only),no,
+BASS,Burning and Suppression of Solids,PSI-26,10.60555/58h4-dy80,yes,yes,
+BASS-II,Burning and Suppression of Solids - II,PSI-25,10.60555/4qc4-de67,yes,yes,
+BASS modeling,Concurrent Flame Spread Modeling using Flamelet Generated Manifolds in Microgravity with Comparison to BASS Experiments using Two-Color Tomography,PSI-62,10.60555/e9xp-ex83,no (DataCite only),no,modeling study
+CFI,Cool Flames Investigation,PSI-39,10.60555/m6pj-a914,yes,no,
+CFI modeling,Effect of External Thermo-Convective Perturbation on Cool Flame Dynamics: A Multidimensional Multi-Physics CFD Analysis,PSI-117,10.60555/gz0q-b577,no (DataCite only),no,modeling study
+Cool flame counterflow,Quantitative Studies of Cool Flame Transitions at Radiation/Stretch Extinction Using Counterflow Flames,PSI-142,10.60555/80qf-vj95,yes,no,
+DAFT + DAFT-2,Dust and Aerosol Measurement Feasibility Test / -2,PSI-47,10.60555/ztgj-d202,yes (2 entries),no,one PSI record covers both
+FLEX,Flame Extinguishment Experiment,PSI-69,10.60555/mbq8-0451,yes,yes,
+FLEX-2,Flame Extinguishment Experiment - 2,PSI-68,10.60555/byp8-h018,yes,yes,
+SAFFIRE-I,Spacecraft Fire Safety Experiment-I,PSI-98,10.60555/0t15-1z43,yes,yes,
+SAFFIRE-II,Spacecraft Fire Experiment-II,PSI-99,10.60555/2chp-m469,yes,yes,
+SAFFIRE-III,Spacecraft Fire Experiment-III,PSI-100,10.60555/040q-4h36,yes,yes,
+SAME,Smoke and Aerosol Measurement Experiment,PSI-102,10.60555/gd4k-8h62,yes,yes,
+SAME-R,Smoke Aerosol Measurement Experiment-Reflight,PSI-101,10.60555/2np7-jv14,yes,yes,
+SAME modeling,Utilization of the Smoke Aerosol Measurement Experiment Data for Advanced Modeling and Simulation of Smoke Generation in Micro-Gravity,PSI-115,10.60555/q0v5-1v28,yes,no,modeling study
+SLICE,Structure and Liftoff in Combustion Experiment,PSI-106,10.60555/pm12-rg61,yes,no,
+SPICE,Smoke Point in Coflow Experiment,PSI-107,10.60555/9kbh-e962,yes,no,

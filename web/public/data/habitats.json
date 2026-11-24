@@ -1,0 +1,69 @@
+{
+ "presets": [
+  {
+   "id": "iss",
+   "name": "ISS / Space Shuttle cabin",
+   "pressure_kpa": 101.35,
+   "pressure_psia": 14.7,
+   "o2_percent": 21.0,
+   "source": "NTRS 20150021491 (Evidence Report: Risk of Hypobaric Hypoxia from the Exploration Atmosphere), p. 5",
+   "notes": null
+  },
+  {
+   "id": "alternative",
+   "name": "Shuttle staged-decompression atmosphere",
+   "pressure_kpa": 70.33,
+   "pressure_psia": 10.2,
+   "o2_percent": 26.5,
+   "source": "NTRS 20150021491 (Evidence Report: Risk of Hypobaric Hypoxia from the Exploration Atmosphere), p. 4",
+   "notes": "used on 34 shuttle missions"
+  },
+  {
+   "id": "exploration",
+   "name": "Exploration atmosphere (planned)",
+   "pressure_kpa": 56.54,
+   "pressure_psia": 8.2,
+   "o2_percent": 34.0,
+   "source": "NTRS 20150021491 (Evidence Report: Risk of Hypobaric Hypoxia from the Exploration Atmosphere), p. 4",
+   "notes": "re-evaluated in 2012 from 8.0 psia / 32% O2; planned, not an adopted standard"
+  },
+  {
+   "id": "eva",
+   "name": "EVA suit (lowest anticipated pressure)",
+   "pressure_kpa": 29.65,
+   "pressure_psia": 4.3,
+   "o2_percent": null,
+   "source": "NTRS 20150021491 (Evidence Report: Risk of Hypobaric Hypoxia from the Exploration Atmosphere), p. 6",
+   "notes": "TODO: cite a source for suit O2 % (brief assumes 100%)"
+  }
+ ],
+ "places": [
+  {
+   "environment": "Earth (sea level)",
+   "gravity_g": 1.0,
+   "pressure_kpa": 101.4,
+   "o2_percent": 20.95,
+   "source": "NASA NSSDC Planetary Fact Sheet",
+   "source_location": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+   "notes": "dry air by volume"
+  },
+  {
+   "environment": "Moon (surface)",
+   "gravity_g": 0.165,
+   "pressure_kpa": 3e-13,
+   "o2_percent": null,
+   "source": "NASA NSSDC Planetary Fact Sheet",
+   "source_location": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html",
+   "notes": "no breathable atmosphere - fire risk is inside habitats only"
+  },
+  {
+   "environment": "Mars (surface)",
+   "gravity_g": 0.38,
+   "pressure_kpa": 0.64,
+   "o2_percent": 0.16,
+   "source": "NASA NSSDC Planetary Fact Sheet",
+   "source_location": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html",
+   "notes": "outside air cannot support combustion; fire risk is inside habitats"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+﻿field_name,description,data_type,unit_or_allowed_values,required,missing_value_rule,notes
+experiment_id,Internal stable ID for one experiment/run,string,Team-defined,yes,Never reuse,Preserve NASA identifier separately
+gravity_condition,Gravity condition stated by source,string,microgravity; partial gravity; 1g; other; unknown,no,unknown if absent,Do not infer from platform alone
+oxygen_concentration_value,Oxygen concentration reported by source,number,Use oxygen_unit and oxygen_basis,no,blank if absent,Do not assume percent by volume
+pressure_type,Pressure reference,string,absolute; gauge; differential; unspecified,no,unspecified if unclear,Do not silently convert
+fuel_state,Fuel physical state,string,solid; liquid; gas; other; unknown,no,unknown if absent,Source-verified only
+source_id,Reference to source_register.csv,string,SRC-0001 etc.,yes for sourced facts,Never blank for factual claims,Include page/table/figure
+verification_status,Review state,string,unverified; reviewed; needs_correction,yes,unverified by default,Reviewer changes status

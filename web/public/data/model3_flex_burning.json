@@ -1,0 +1,85 @@
+{
+ "features": [
+  "o2_percent",
+  "pressure_kpa",
+  "co2_fraction",
+  "he_fraction",
+  "is_heptane",
+  "droplet_d_mm"
+ ],
+ "scaler_mean": [
+  20.089844,
+  93.171719,
+  0.114844,
+  0.049023,
+  0.414062,
+  2.997773
+ ],
+ "scaler_scale": [
+  4.781529,
+  30.166271,
+  0.162108,
+  0.11409,
+  0.492559,
+  0.692873
+ ],
+ "coefficients_standardized": [
+  0.09108,
+  0.008814,
+  -0.025125,
+  0.05708,
+  0.015827,
+  -0.044463
+ ],
+ "intercept": 0.501953,
+ "formula": "rate = intercept + sum(coef_i * (x_i - mean_i) / scale_i)",
+ "name": "FLEX droplet burning rate (ridge regression)",
+ "unit": "as reported in PSI-69 column 'Burning rate; mm' - unit not yet verified (likely mm^2/s)",
+ "valid_ranges": {
+  "Heptane": {
+   "o2_percent": [
+    13.0,
+    34.0
+   ],
+   "pressure_kpa": [
+    70.39,
+    207.16
+   ],
+   "co2_fraction": [
+    0.0,
+    0.7
+   ],
+   "he_fraction": [
+    0.0,
+    0.45
+   ],
+   "droplet_d_mm": [
+    1.1,
+    4.67
+   ]
+  },
+  "Methanol": {
+   "o2_percent": [
+    12.0,
+    34.0
+   ],
+   "pressure_kpa": [
+    70.17,
+    309.27
+   ],
+   "co2_fraction": [
+    0.0,
+    0.7
+   ],
+   "he_fraction": [
+    0.0,
+    0.45
+   ],
+   "droplet_d_mm": [
+    1.61,
+    4.53
+   ]
+  }
+ },
+ "label": "model estimate, not a measurement"
+}

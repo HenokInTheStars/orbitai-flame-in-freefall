@@ -1,0 +1,65 @@
+{
+ "features": [
+  "o2_percent",
+  "log_flow",
+  "inv_rod_d",
+  "is_micro",
+  "micro_x_o2"
+ ],
+ "scaler_mean": [
+  18.905682,
+  0.999017,
+  1.454187,
+  0.579545,
+  10.757955
+ ],
+ "scaler_scale": [
+  1.328393,
+  1.126558,
+  0.703545,
+  0.493632,
+  9.225825
+ ],
+ "coefficients_standardized": [
+  0.024901,
+  -0.004946,
+  0.027135,
+  0.038213,
+  -0.037348
+ ],
+ "intercept": 0.064732,
+ "formula": "rate = intercept + sum(coef_i * (x_i - mean_i) / scale_i)",
+ "name": "Flame spread rate over PMMA rods (ridge regression)",
+ "unit": "mm/s",
+ "valid_ranges": {
+  "earth": {
+   "o2_percent": [
+    17.5,
+    20.9
+   ],
+   "flow_cm_s": [
+    2.0,
+    25.0
+   ],
+   "rod_d_cm": [
+    0.32,
+    1.27
+   ]
+  },
+  "micro": {
+   "o2_percent": [
+    16.8,
+    20.9
+   ],
+   "flow_cm_s": [
+    0.41,
+    7.55
+   ],
+   "rod_d_cm": [
+    0.64,
+    1.27
+   ]
+  }
+ },
+ "label": "model estimate, not a measurement"
+}

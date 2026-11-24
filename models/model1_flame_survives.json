@@ -1,0 +1,51 @@
+{
+ "features": [
+  "o2_percent",
+  "inv_rod_d"
+ ],
+ "scaler_mean": [
+  19.091304,
+  1.724735
+ ],
+ "scaler_scale": [
+  1.112347,
+  0.922367
+ ],
+ "coefficients_standardized": [
+  2.350893,
+  0.656502
+ ],
+ "intercept": 1.398491,
+ "formula": "p = 1 / (1 + exp(-(intercept + sum(coef_i * (x_i - mean_i) / scale_i))))",
+ "name": "Flame survives on Earth? PMMA rods (logistic regression)",
+ "scope": "Earth gravity (1-g), black PMMA rods, opposed flow 2 or 25 cm/s (Link 2018 Table S2)",
+ "valid_ranges": {
+  "o2_percent": [
+   17.0,
+   20.9
+  ],
+  "rod_d_cm": [
+   0.32,
+   1.27
+  ]
+ },
+ "earth_50pct_line_vs_iss_measured": {
+  "0.32 cm": {
+   "earth_model_o2_at_50pct": 18.0,
+   "iss_lowest_o2_with_flame_spread_measured": null
+  },
+  "0.64 cm": {
+   "earth_model_o2_at_50pct": 18.5,
+   "iss_lowest_o2_with_flame_spread_measured": 16.8
+  },
+  "0.95 cm": {
+   "earth_model_o2_at_50pct": 18.7,
+   "iss_lowest_o2_with_flame_spread_measured": 17.5
+  },
+  "1.27 cm": {
+   "earth_model_o2_at_50pct": 18.75,
+   "iss_lowest_o2_with_flame_spread_measured": 17.6
+  }
+ },
+ "label": "model estimate, not a measurement"
+}

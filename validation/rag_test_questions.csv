@@ -1,0 +1,5 @@
+﻿test_id,question,expected_source_id,expected_page_or_section,expected_behavior,review_status
+RAG-001,What ignition conditions does the source report?,,,Cite source; say if evidence is absent,not_started
+RAG-002,What measurements are reported for flame propagation?,,,Preserve units and conditions,not_started
+RAG-003,What extinguishment method and result are documented?,,,Separate observation from interpretation,not_started
+RAG-004,Does the source report oxygen concentration and pressure?,,,Do not invent missing values,not_started

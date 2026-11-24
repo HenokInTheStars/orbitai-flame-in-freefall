@@ -1,0 +1,8 @@
+material,composition,thickness,ulpi_psia_in_99_8pct_o2,mtp_psia_in_99_8pct_o2,uloi_percent_o2_at_10_2psia,moc_percent_o2_at_10_2psia,notes,source
+Epoxy/glass (NEMA G-11),epoxy/fiberglass laminate,0.06 in,0.9,0.8,28.6,24,checked against the scanned Table 2 image; column headers ULPI / MTP / ULOI / MOC confirmed,"NTRS 20100015582 (Hirsch et al.), Tables 1-2"
+Udel P1700,polysulfone,0.06 in,1.0,0.9,31.7,29,checked against the scanned Table 2 image; column headers ULPI / MTP / ULOI / MOC confirmed,"NTRS 20100015582 (Hirsch et al.), Tables 1-2"
+Kydex 100,PVC/PMMA alloy,0.05 in,1.8,0.6,33.5,32,ULPI 1.8 confirmed against the scanned Table 2 image (large gap to MTP 0.6 is as printed); column headers ULPI / MTP / ULOI / MOC confirmed,"NTRS 20100015582 (Hirsch et al.), Tables 1-2"
+Solimide TA-301,polyimide foam,0.12 in,0.7,0.5,29.3,28,checked against the scanned Table 2 image; column headers ULPI / MTP / ULOI / MOC confirmed,"NTRS 20100015582 (Hirsch et al.), Tables 1-2"
+Melinex 515,polyethylene terephthalate film,0.005 in,0.9,0.4,21.2,20,checked against the scanned Table 2 image; column headers ULPI / MTP / ULOI / MOC confirmed,"NTRS 20100015582 (Hirsch et al.), Tables 1-2"
+Nomex HT90-40,aramid fabric,0.013 in,0.6,0.5,28.5,25,checked against the scanned Table 2 image; column headers ULPI / MTP / ULOI / MOC confirmed,"NTRS 20100015582 (Hirsch et al.), Tables 1-2"
+Ultem 1000,polyetherimide film,0.01 in,1.5,0.9,26.5,24,checked against the scanned Table 2 image; column headers ULPI / MTP / ULOI / MOC confirmed,"NTRS 20100015582 (Hirsch et al.), Tables 1-2"

@@ -1,0 +1,11 @@
+# Source review checklist
+- [ ] Correct PSI investigation and variant confirmed.
+- [ ] Exact title, ID, authors, date, URL, DOI/report number recorded.
+- [ ] Original download retained unchanged.
+- [ ] License, copyright, third-party credits, redistribution terms checked.
+- [ ] Numeric values retain units, conditions, uncertainty, context.
+- [ ] Oxygen basis and pressure type recorded where stated.
+- [ ] Missing values not guessed.
+- [ ] Every extracted claim points to page/section/table/figure.
+- [ ] Second reviewer checked the extraction.
+- [ ] RAG chunks retain metadata and valid citations.

@@ -1,0 +1,99 @@
+table,gravity,sample_as_printed,d_cm,o2_percent,flow_cm_s,dt_s,vf_x1e3_cm_s_as_printed,uncertainty_pct,flame_spread,notes
+S1,micro,B13a,1.27,20.7,1.64,184,5.23,,yes,
+S1,micro,B13a,1.27,20.7,1.54,232,5.27,,yes,
+S1,micro,B13a,1.27,20.7,1.43,239,4.63,,yes,
+S1,micro,B13a,1.27,20.7,1.38,238,4.69,,yes,
+S1,micro,B13b,1.27,20.6,1.64,159,7.09,,yes,
+S1,micro,B13b,1.27,20.6,1.54,179,4.91,,yes,
+S1,micro,B5,1.27,19.3,1.64,192,3.76,,yes,
+S1,micro,B5,1.27,19.3,1.54,241,3.74,,yes,
+S1,micro,B9,1.27,17.6,1.64,147,4.57,,yes,
+S1,micro,B9,1.27,17.6,1.54,76,3.34,,yes,
+S1,micro,B9,1.27,17.6,1.43,154,2.67,,yes,
+S1,micro,B9,1.27,17.6,1.38,112,2.03,,yes,
+S1,micro,C25,0.95,20.9,1.58,115,6.09,,yes,C = clear PMMA
+S1,micro,C25,0.95,20.9,1.52,169,5.50,,yes,C = clear PMMA
+S1,micro,C25,0.95,20.9,1.48,181,5.59,,yes,C = clear PMMA
+S1,micro,B22,0.95,20.8,1.58,123,6.45,,yes,
+S1,micro,B22,0.95,20.8,1.58,79,8.31,,yes,
+S1,micro,B22,0.95,20.8,1.52,120,5.89,,yes,
+S1,micro,B22,0.95,20.8,1.48,146,4.10,,yes,
+S1,micro,B4,0.95,18.5,2.00,177,3.25,,yes,
+S1,micro,B4,0.95,18.5,1.87,131,3.10,,yes,
+S1,micro,B4,0.95,18.5,1.73,145,2.69,,yes,
+S1,micro,B12,0.95,17.5,1.01,121,3.08,,yes,
+S1,micro,B12,0.95,17.5,0.82,134,3.45,,yes,
+S1,micro,B12,0.95,17.5,0.60,129,3.65,,yes,
+S1,micro,B12,0.95,17.5,0.48,158,2.37,,yes,
+S1,micro,B6,0.64,18.9,2.00,90,10.00,,yes,right half of S1 labels this column (mm/s) - treated as same unit as left half (x1e3 cm/s) to match paper Fig. 5
+S1,micro,B6,0.64,18.9,1.87,121,9.74,,yes,
+S1,micro,B6,0.64,18.9,1.73,93,8.32,,yes,
+S1,micro,B15,0.64,18.4,2.14,424,7.16,,yes,"sources differ: PSI-25 test P15 lists initial O2 18.0% (final 17.5%). Likely cause: Table S1 prints B14 and B15 under one merged 18.4 cell, and in PSI-25 P14 ran 18.4 -> 18.0% just before P15 started at 18.0%. Unresolved, so kept out of training"
+S1,micro,B14,0.64,18.4,1.98,384,6.38,,yes,
+S1,micro,B16,0.64,18.2,7.55,72,6.78,,yes,
+S1,micro,B16,0.64,18.2,1.67,139,7.62,,yes,
+S1,micro,B16,0.64,18.2,0.83,198,6.99,,yes,
+S1,micro,B16,0.64,18.2,0.72,170,5.68,,yes,
+S1,micro,B1,0.64,17.7,4.00,794,7.15,,yes,
+S1,micro,B1,0.64,17.7,2.15,23,5.91,,yes,
+S1,micro,C3a,0.64,17.7,2.50,33,8.37,,yes,C = clear PMMA
+S1,micro,C3a,0.64,17.7,2.00,30,6.42,,yes,C = clear PMMA
+S1,micro,B19,0.64,17.5,7.55,67,4.69,,yes,
+S1,micro,B19,0.64,17.5,1.67,128,6.52,,yes,
+S1,micro,B19,0.64,17.5,0.83,189,6.25,,yes,
+S1,micro,B19,0.64,17.5,0.72,200,5.44,,yes,
+S1,micro,B2,0.64,17.4,2.50,24,7.25,,yes,
+S1,micro,B2,0.64,17.4,2.00,28,7.87,,yes,
+S1,micro,C3b,0.64,17.4,1.85,109,6.00,,yes,C = clear PMMA
+S1,micro,B10,0.64,17.0,2.00,106,5.41,,yes,
+S1,micro,B10,0.64,17.0,1.87,104,5.15,,yes,
+S1,micro,B10,0.64,17.0,1.73,148,4.22,,yes,
+S1,micro,P17,0.64,16.8,1.01,123,4.12,,yes,sample prefix P not defined in table caption (only B and C are)
+S1,micro,P17,0.64,16.8,0.82,187,4.78,,yes,sample prefix P not defined in table caption (only B and C are)
+S1,micro,P17,0.64,16.8,0.41,65,2.26,,yes,sample prefix P not defined in table caption (only B and C are)
+S2,earth,,1.27,20.9,25,,7.81,0.2,yes,
+S2,earth,,1.27,20.9,2,,9.07,2.5,yes,
+S2,earth,,1.27,20.0,25,,5.08,0.8,yes,
+S2,earth,,1.27,20.0,2,,6.41,0.2,yes,
+S2,earth,,1.27,19.0,25,,2.60,2.9,yes,
+S2,earth,,1.27,19.0,2,,3.99,5.1,yes,
+S2,earth,,1.27,18.5,25,,1.35,8.0,yes,
+S2,earth,,1.27,18.5,2,,2.56,1.5,yes,
+S2,earth,,1.27,18.3,25,,,,no,printed as '-' (no steady flame spread)
+S2,earth,,1.27,18.1,2,,,,no,printed as '-' (no steady flame spread)
+S2,earth,,0.95,20.9,25,,9.06,4.3,yes,
+S2,earth,,0.95,20.9,2,,10.65,0.3,yes,
+S2,earth,,0.95,20.0,25,,6.29,0.6,yes,
+S2,earth,,0.95,20.0,2,,8.45,0.4,yes,
+S2,earth,,0.95,19.0,25,,3.50,1.0,yes,
+S2,earth,,0.95,19.0,2,,5.01,2.5,yes,
+S2,earth,,0.95,18.8,2,,2.97,2.0,yes,
+S2,earth,,0.95,18.5,25,,,,no,printed as '-' (no steady flame spread)
+S2,earth,,0.95,18.5,2,,3.33,0.6,yes,
+S2,earth,,0.95,18.1,2,,,,no,printed as '-' (no steady flame spread)
+S2,earth,,0.64,20.9,25,,11.17,1.3,yes,
+S2,earth,,0.64,20.9,2,,13.63,0.8,yes,
+S2,earth,,0.64,20.0,25,,8.16,0.6,yes,
+S2,earth,,0.64,20.0,2,,9.90,1.2,yes,
+S2,earth,,0.64,19.0,25,,5.77,2.2,yes,
+S2,earth,,0.64,19.0,2,,6.96,1.1,yes,
+S2,earth,,0.64,18.5,25,,3.20,3.0,yes,
+S2,earth,,0.64,18.5,2,,5.90,0.5,yes,
+S2,earth,,0.64,18.2,25,,,,no,printed as '-' (no steady flame spread)
+S2,earth,,0.64,18.0,2,,4.69,1.0,yes,two rows at 18.0% / 2 cm/s printed - kept both as printed
+S2,earth,,0.64,18.0,2,,3.13,2.3,yes,two rows at 18.0% / 2 cm/s printed - kept both as printed
+S2,earth,,0.64,17.8,2,,,,no,printed as '-' (no steady flame spread)
+S2,earth,,0.64,17.5,2,,,,no,printed as '-' (no steady flame spread)
+S2,earth,,0.32,20.9,25,,18.40,1.7,yes,0.32 cm rod tested on Earth only
+S2,earth,,0.32,20.9,2,,23.57,2.2,yes,0.32 cm rod tested on Earth only
+S2,earth,,0.32,20.0,25,,14.50,0.8,yes,0.32 cm rod tested on Earth only
+S2,earth,,0.32,20.0,2,,19.00,1.3,yes,0.32 cm rod tested on Earth only
+S2,earth,,0.32,19.0,25,,10.00,1.2,yes,0.32 cm rod tested on Earth only
+S2,earth,,0.32,19.0,2,,14.01,0.8,yes,0.32 cm rod tested on Earth only
+S2,earth,,0.32,18.5,25,,7.50,0.8,yes,0.32 cm rod tested on Earth only
+S2,earth,,0.32,18.5,2,,11.02,0.3,yes,0.32 cm rod tested on Earth only
+S2,earth,,0.32,18.0,25,,4.35,0.8,yes,0.32 cm rod tested on Earth only
+S2,earth,,0.32,18.0,2,,8.00,1.1,yes,0.32 cm rod tested on Earth only
+S2,earth,,0.32,17.7,25,,,,no,printed as '-' (no steady flame spread); 0.32 cm rod tested on Earth only
+S2,earth,,0.32,17.5,2,,3.88,0.5,yes,0.32 cm rod tested on Earth only - spreads at 17.5% on Earth (thin rod)
+S2,earth,,0.32,17.0,2,,,,no,printed as '-' (no steady flame spread); 0.32 cm rod tested on Earth only

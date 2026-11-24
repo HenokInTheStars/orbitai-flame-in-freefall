@@ -1,0 +1,6 @@
+flight_sample,material,burn_duration_s,peak_heat_release_o2_calorimetry_w,total_heat_release_o2_calorimetry_kj,avg_heat_release_fuel_calorimetry_w,total_heat_release_fuel_calorimetry_kj,max_temp_sfu_outlet_c,max_temp_ffd_c,co2_increase_ppm,co2_partial_pressure_increase_mmhg,co_increase_ppm,notes,source
+IV-1,SIBAL,130,3150,409,,,45,25,1390,1.03,80,,"NTRS 20240007488 (Saffire VI, ICES 2024)"
+V-2,Cotton jersey,200,2800,560,,,46,23,2360,1.26,83,,"NTRS 20240007488 (Saffire VI, ICES 2024)"
+VI-2,SIBAL,112,3217,580,3650,409,48,20,2800,1.15,120,column alignment in source ambiguous for this row - verify,"NTRS 20240007488 (Saffire VI, ICES 2024)"
+VI-3,PMMA 2-sided,780,3080,1280,,,77,21,8539,3.51,308,CO2 partial pressure exceeds 3 mmHg 1-h limit,"NTRS 20240007488 (Saffire VI, ICES 2024)"
+VI-4,PMMA 1-sided,1200,1507,830,,,57,21,8117,3.37,320,CO2 partial pressure exceeds 3 mmHg 1-h limit,"NTRS 20240007488 (Saffire VI, ICES 2024)"
