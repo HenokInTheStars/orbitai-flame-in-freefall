@@ -47,8 +47,8 @@ export default function AboutPage() {
             <li>Download the small &ldquo;Experimental table&rdquo; CSV of each PSI investigation; never edit the originals.</li>
             <li>Clean units and typos with a Python script; keep text outcomes as text; flag anything doubtful instead of fixing it silently.</li>
             <li>Type up tables from NASA reports and papers, then check them against the PDF.</li>
-            <li>Train three small scikit-learn models, scored only on tests they never saw.</li>
-            <li>Export everything to JSON for this Next.js site. The copilot answers with retrieval over these sources and Google Gemini (no fine-tuning).</li>
+            <li>Train three small models (Python, scikit-learn) and score them only on tests they never saw.</li>
+            <li>Export everything for this Next.js site. The AI assistant first searches these sources, then Google Gemini writes an answer using only what was found, with citations. It passes 14–16 of our 16 test questions.</li>
           </ol>
         </Panel>
 

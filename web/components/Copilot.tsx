@@ -10,7 +10,7 @@ type Msg = { role: "user" | "assistant"; text: string; sources?: { id: string; t
 const SUGGESTIONS: Record<string, { page: string; qs: string[] }> = {
   "/": { page: "Home", qs: [
     "Why can a material pass NASA's test on Earth but burn in space?",
-    "Which PSI investigations matter most for crewed habitats?",
+    "Which NASA experiments matter most for crewed habitats?",
     "What do we know about fire on the Moon?",
   ] },
   "/scientists": { page: "For Scientists", qs: [
@@ -135,7 +135,7 @@ export function Copilot() {
         <div className="flex items-start gap-2 border-b border-line p-4">
           <span className="grid size-9 shrink-0 place-items-center rounded-full bg-space-700 text-cyan"><Sparkles size={16} /></span>
           <div className="min-w-0 flex-1">
-            <div className="label">SI Copilot</div>
+            <div className="label">AI research assistant</div>
             <h2 id="copilot-title" className="text-lg font-semibold">Ask the data</h2>
           </div>
           <button type="button" onClick={() => show(false)} aria-label="Close the copilot" className="grid size-9 place-items-center rounded-full border border-line text-ink-2 hover:text-ink">
@@ -145,8 +145,8 @@ export function Copilot() {
 
         <div ref={listRef} className="flex-1 overflow-y-auto p-4" aria-live="polite">
           <p className="text-xs leading-relaxed text-ink-3">
-            Answers come only from our cleaned NASA data and source excerpts, with citations. If the sources don&apos;t cover a question, it says so.
-            It uses retrieval and prompting; it is not fine-tuned.
+            It searches our NASA data and reports, then answers only from what it found, with numbered sources.
+            If our sources don&apos;t cover a question, it says so instead of guessing.
           </p>
           <div className="mt-4 grid gap-3">
             <div className="label">Ask anything, from any tab · ideas for this one</div>

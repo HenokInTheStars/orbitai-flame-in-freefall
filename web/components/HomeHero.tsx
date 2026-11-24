@@ -21,9 +21,10 @@ export function HomeHero() {
             <span className="whitespace-nowrap">Earth-safe</span> <span className="text-earth">isn&apos;t</span> <span className="whitespace-nowrap">space-safe.</span>
           </h1>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-ink-2">
-            NASA rates spacecraft materials with a fire test run in Earth gravity. ISS experiments show flames can keep
-            burning at lower oxygen in microgravity, and future lunar habitats will breathe richer air. We turn NASA&apos;s
-            microgravity combustion data into fire-safety insight, and mark clearly where no data exists yet.
+            NASA checks spacecraft materials with a fire test done here on Earth. But experiments on the space station show
+            flames can survive on less oxygen in space, and future Moon habitats will breathe oxygen-richer air. We turned
+            NASA&apos;s space fire experiments into an interactive dashboard that shows where the risk is, and says
+            plainly where nobody has data yet.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/investigation" className="glow-ring rounded-full bg-space-700 px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em]">

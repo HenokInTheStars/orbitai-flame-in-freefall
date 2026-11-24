@@ -14,7 +14,7 @@ export const SITES = [
     name: "NASA White Sands Test Facility",
     place: "Las Cruces, New Mexico",
     lonLat: [-106.76, 32.32] as [number, number],
-    role: "Earth-gravity material flammability testing (NASA-STD-6001 Test 1). Source of our 26-material MOC table.",
+    role: "Earth-gravity material flammability testing (NASA-STD-6001 Test 1). Source of our oxygen-limit data for 26 spacecraft materials.",
     source: "NTRS 20070018178 and 20110008636 author affiliations",
   },
   {

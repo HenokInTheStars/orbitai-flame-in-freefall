@@ -30,7 +30,7 @@ export function OxygenSoak({ rows }: { rows: SoakRow[] }) {
           <h2 id="soak-title" className="text-lg font-semibold">After 100% oxygen, how long do materials stay extra-flammable?</h2>
         </div>
         <span className="inline-flex items-center rounded-full border border-cyan/40 bg-cyan/10 px-2.5 py-1 text-[11px] font-medium text-cyan">
-          NASA calculation (diffusion model)
+          NASA calculation (how fast oxygen seeps out)
         </span>
       </div>
       <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-2">

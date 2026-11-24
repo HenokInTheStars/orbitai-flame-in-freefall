@@ -1,10 +1,37 @@
-# Flame in Freefall — OrbitAI Lab
+# Flame in Freefall
 
-**NASA Space Apps Challenge 2026 · "Flame in Freefall"**
+**NASA fire-safety data, turned into an interactive dashboard with tested models and a cited AI assistant.**
+Built by OrbitAI Lab for the NASA Space Apps Challenge 2026.
 
-A dashboard that turns NASA Physical Sciences Informatics (PSI) microgravity combustion data into fire safety insights for spacecraft and lunar habitats.
+![Home page: headline, key numbers, insights and the AI research assistant](docs/screenshots/home.png)
 
-**Our angle: Earth-safe isn't space-safe.** Spacecraft materials are screened with an Earth-gravity test, but in microgravity some materials behave differently, and future habitats may run at a lower pressure with more oxygen. The dashboard shows that gap using real test data. It also marks clearly where no data exists yet, such as partial gravity on the Moon or Mars.
+## The idea in one line
+
+NASA checks spacecraft materials with a fire test done on Earth, but **flames survive on less oxygen in space**, and future Moon habitats will breathe **oxygen-richer air**. This project shows where that gap makes materials unsafe, using NASA's own measurements.
+
+## At a glance
+
+| | |
+|---|---|
+| **586** measured fire-test results | from 5 NASA space experiments, NASA technical reports and a peer-reviewed study, cleaned and traced back to their source |
+| **16.8% oxygen** | the lowest level at which a flame kept burning on the space station. Our model puts the Earth cut-off for the same rod near 18.5% |
+| **7 of 26** spacecraft materials | would burn in the air NASA plans for future habitats (34% oxygen), by NASA's own test |
+| **3 prediction models** | scored only on tests they never saw. The flame-survival model is right 83% of the time and caught 9 of 9 flame-outs |
+| **AI assistant, 1–3 s per answer** | answers only from our sources, with citations. Passes 14–16 of 16 test questions, including declining off-topic ones |
+| **5 pages** | for scientists, students and space fans, a habitat "stress test", and an About page with every source |
+
+## What we built
+
+- **Data pipeline (Python, pandas):** five scripts turn messy NASA tables into one clean dataset: unit fixes, typo flags, no silent edits. Running them again produces the same files byte for byte. Values typed in from PDFs were checked against the originals.
+- **Prediction models (scikit-learn):** flame survival, flame-spread speed and fuel-droplet burning rate. Each is tested on data held out during training and compared with a simple baseline. Limits are in the [model card](models/MODEL_CARD.md).
+- **AI research assistant (Google Gemini):** searches 575 passages from NASA reports, papers and our data, then answers only from what it found, with numbered citations. It is scored by an [automatic evaluation](validation/COPILOT_EVAL.md), which caught and fixed a real error: a wrong answer with a citation.
+- **Web app (Next.js 16, React 19, TypeScript, Tailwind CSS):** hand-written SVG charts, a d3 globe, an interactive habitat stress test, and the assistant docked on every page. Dependency audit clean.
+
+| Investigation: which materials would burn in this air? | For Scientists: the evidence, test by test |
+|---|---|
+| ![Habitat stress test](docs/screenshots/investigation.png) | ![Scientists page](docs/screenshots/scientists.png) |
+
+## Links
 
 - **Live demo:** TODO(team): add the Vercel URL after deploying
 - **Demo video:** TODO(team): add the video link

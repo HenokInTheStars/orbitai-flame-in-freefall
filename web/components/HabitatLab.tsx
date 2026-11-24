@@ -110,7 +110,7 @@ export function HabitatLab({ habitats, materials, pressureEffect, model1, model2
             </div>
           </div>
           <p className="mt-4 text-xs leading-relaxed text-ink-3">
-            Partial pressure of O₂: <span className="num text-ink-2">{((o2 / 100) * psia).toFixed(2)} psi</span>. Presets from NTRS 20150021491, pp. 4–6.
+            Oxygen actually reaching the lungs (partial pressure): <span className="num text-ink-2">{((o2 / 100) * psia).toFixed(2)} psi</span>. Presets from NTRS 20150021491, pp. 4–6.
           </p>
         </div>
         <FlameVisual o2={o2} />
@@ -209,7 +209,7 @@ export function HabitatLab({ habitats, materials, pressureEffect, model1, model2
           <PredictionCard
             title="Chance the flame keeps spreading (Earth)"
             value={pEarth == null ? null : `${Math.round(pEarth * 100)}%`}
-            note={pEarth == null ? `No test data: trained on ${model1.valid_ranges.o2_percent.join("–")}% O₂` : "Model 1, logistic regression · caught every flame-out in testing"}
+            note={pEarth == null ? `No test data: trained on ${model1.valid_ranges.o2_percent.join("–")}% O₂` : "Model 1 · caught 9 of 9 flame-outs in testing"}
           />
           <PredictionCard
             title="Spread rate, Earth gravity"

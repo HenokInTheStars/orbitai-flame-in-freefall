@@ -122,30 +122,30 @@ export default function ScientistsPage() {
               <thead className="bg-space-800 text-left">
                 <tr>
                   <th className="label px-3 py-2.5">Model</th><th className="label px-3 py-2.5">Data</th><th className="label px-3 py-2.5">Tested by</th>
-                  <th className="label px-3 py-2.5 text-right">Score</th><th className="label px-3 py-2.5 text-right">Baseline</th>
+                  <th className="label px-3 py-2.5 text-right">How well (on unseen tests)</th><th className="label px-3 py-2.5 text-right">Compared with</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-t border-line align-top">
-                  <td className="px-3 py-2.5"><b>1 · Flame survives (Earth)</b><div className="text-xs text-ink-3">logistic regression: O₂, 1/diameter</div></td>
+                  <td className="px-3 py-2.5"><b>1 · Does the flame keep burning? (Earth)</b><div className="text-xs text-ink-3">logistic regression on oxygen and rod size</div></td>
                   <td className="px-3 py-2.5 text-ink-2">{m.model1_flame_survives.rows} Earth conditions, 4 rod sizes</td>
-                  <td className="px-3 py-2.5 text-ink-2">leave one rod size out (4 rounds)</td>
-                  <td className="num px-3 py-2.5 text-right">AUC {m.model1_flame_survives.model.auc.toFixed(2)} · bal. acc {m.model1_flame_survives.model.balanced_accuracy.toFixed(2)}</td>
-                  <td className="num px-3 py-2.5 text-right">0.50</td>
+                  <td className="px-3 py-2.5 text-ink-2">hide one rod size, train on the rest, repeat 4 times</td>
+                  <td className="px-3 py-2.5 text-right"><div className="text-ink">Right {Math.round(m.model1_flame_survives.model.accuracy * 100)}% of the time on rod sizes it never saw</div><div className="num text-xs text-ink-3">AUC {m.model1_flame_survives.model.auc.toFixed(2)} · balanced accuracy {m.model1_flame_survives.model.balanced_accuracy.toFixed(2)}</div></td>
+                  <td className="px-3 py-2.5 text-right"><div className="text-ink-2">Coin flip</div><div className="num text-xs text-ink-3">AUC 0.50</div></td>
                 </tr>
                 <tr className="border-t border-line align-top">
-                  <td className="px-3 py-2.5"><b>2 · Spread rate</b><div className="text-xs text-ink-3">ridge: O₂, log flow, 1/d, gravity</div></td>
+                  <td className="px-3 py-2.5"><b>2 · How fast does the flame spread?</b><div className="text-xs text-ink-3">ridge regression on oxygen, air flow, rod size, gravity</div></td>
                   <td className="px-3 py-2.5 text-ink-2">{m.model2_spread_rate.rows} rows, ISS + Earth</td>
-                  <td className="px-3 py-2.5 text-ink-2">5-fold, grouped by test</td>
-                  <td className="num px-3 py-2.5 text-right">R² {m.model2_spread_rate.model.r2.toFixed(2)} · MAE {m.model2_spread_rate.model.mae_mm_s.toFixed(3)} mm/s</td>
-                  <td className="num px-3 py-2.5 text-right">R² {m.model2_spread_rate.baseline_mean.r2.toFixed(2)}</td>
+                  <td className="px-3 py-2.5 text-ink-2">5 rounds; a test is never split between training and scoring</td>
+                  <td className="px-3 py-2.5 text-right"><div className="text-ink">Explains {Math.round(m.model2_spread_rate.model.r2 * 100)}% of the differences between tests</div><div className="num text-xs text-ink-3">R² {m.model2_spread_rate.model.r2.toFixed(2)} · typical error {m.model2_spread_rate.model.mae_mm_s.toFixed(3)} mm/s</div></td>
+                  <td className="px-3 py-2.5 text-right"><div className="text-ink-2">Guess the average</div><div className="num text-xs text-ink-3">R² {m.model2_spread_rate.baseline_mean.r2.toFixed(2)}</div></td>
                 </tr>
                 <tr className="border-t border-line align-top">
-                  <td className="px-3 py-2.5"><b>3 · FLEX burning rate</b><div className="text-xs text-ink-3">ridge: O₂, pressure, CO₂, He, fuel, droplet size</div></td>
+                  <td className="px-3 py-2.5"><b>3 · How fast does a fuel droplet burn? (FLEX)</b><div className="text-xs text-ink-3">ridge regression on oxygen, pressure, CO₂, helium, fuel, droplet size</div></td>
                   <td className="px-3 py-2.5 text-ink-2">{m.model3_flex_burning.rows} ISS droplet tests</td>
-                  <td className="px-3 py-2.5 text-ink-2">5-fold, grouped by test</td>
-                  <td className="num px-3 py-2.5 text-right">R² {m.model3_flex_burning.model.r2.toFixed(2)} · MAE {m.model3_flex_burning.model.mae.toFixed(3)}</td>
-                  <td className="num px-3 py-2.5 text-right">R² {Math.abs(m.model3_flex_burning.baseline_mean.r2) < 0.005 ? "0.00" : m.model3_flex_burning.baseline_mean.r2.toFixed(2)}</td>
+                  <td className="px-3 py-2.5 text-ink-2">5 rounds; a test is never split between training and scoring</td>
+                  <td className="px-3 py-2.5 text-right"><div className="text-ink">Explains {Math.round(m.model3_flex_burning.model.r2 * 100)}% of the differences between tests</div><div className="num text-xs text-ink-3">R² {m.model3_flex_burning.model.r2.toFixed(2)} · typical error {m.model3_flex_burning.model.mae.toFixed(3)}</div></td>
+                  <td className="px-3 py-2.5 text-right"><div className="text-ink-2">Guess the average</div><div className="num text-xs text-ink-3">R² {Math.abs(m.model3_flex_burning.baseline_mean.r2) < 0.005 ? "0.00" : m.model3_flex_burning.baseline_mean.r2.toFixed(2)}</div></td>
                 </tr>
               </tbody>
             </table>
