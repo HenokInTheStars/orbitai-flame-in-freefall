@@ -65,8 +65,11 @@ export default function AboutPage() {
 
         <Panel>
           <PanelHead kicker="Team" title="OrbitAI Lab" />
-          {/* TODO(team): add member names and roles here. Not filled in, so nothing is invented. */}
-          <p className="text-sm leading-relaxed text-ink-2">Team members and roles: to be added by the team.</p>
+          <p className="text-sm leading-relaxed text-ink-2">Built by</p>
+          <ul className="mt-2 grid gap-1.5 text-[15px] font-medium text-ink">
+            <li>Henok Solomon</li>
+            <li>Melat Taye</li>
+          </ul>
           <p className="mt-3 text-sm leading-relaxed text-ink-2">
             Code, data pipeline and README: see our public GitHub repository. Tools: Python (pandas, scikit-learn, pypdf), Next.js, Tailwind CSS,
             d3-geo, Lucide icons, Google Gemini API (copilot answers).

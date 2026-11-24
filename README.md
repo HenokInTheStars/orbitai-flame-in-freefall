@@ -1,7 +1,7 @@
 # Flame in Freefall
 
 **NASA fire-safety data, turned into an interactive dashboard with tested models and a cited AI assistant.**
-Built by OrbitAI Lab for the NASA Space Apps Challenge 2026.
+Built by **Henok Solomon** and **Melat Taye** (OrbitAI Lab) for the NASA Space Apps Challenge 2026.
 
 ![Home page: headline, key numbers, insights and the AI research assistant](docs/screenshots/home.png)
 
@@ -35,7 +35,7 @@ NASA checks spacecraft materials with a fire test done on Earth, but **flames su
 
 - **Live demo:** TODO(team): add the Vercel URL after deploying
 - **Demo video:** TODO(team): add the video link
-- **Team:** TODO(team): names and roles (also on the About page)
+- **Team (OrbitAI Lab):** Henok Solomon, Melat Taye
 
 ## Run it
 
