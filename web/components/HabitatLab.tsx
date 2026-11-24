@@ -29,10 +29,12 @@ const RODS = [0.32, 0.64, 0.95, 1.27]
 
 export function HabitatLab({ habitats, materials, pressureEffect, model1, model2, issLowestByRod, gap }: Props) {
   const usable = habitats.filter((h) => h.o2_percent != null)
-  const [preset, setPreset] = useState("exploration")
-  const start = usable.find((h) => h.id === preset)!
-  const [o2, setO2] = useState(start.o2_percent!)
-  const [psia, setPsia] = useState(start.pressure_psia)
+  // Start values come from the default preset, looked up once. (Looking up the *current* preset on every
+  // render crashed the page as soon as a slider set it to "custom", which matches no preset.)
+  const DEFAULT_PRESET = "exploration"
+  const [preset, setPreset] = useState(DEFAULT_PRESET)
+  const [o2, setO2] = useState(() => usable.find((h) => h.id === DEFAULT_PRESET)?.o2_percent ?? 21)
+  const [psia, setPsia] = useState(() => usable.find((h) => h.id === DEFAULT_PRESET)?.pressure_psia ?? 14.7)
   const [flow, setFlow] = useState(5)
   const [rod, setRod] = useState(0.64)
   const [showAll, setShowAll] = useState(false)
