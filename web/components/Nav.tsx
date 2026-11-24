@@ -21,7 +21,7 @@ export function Nav() {
     <header className="sticky top-0 z-40 bg-space-950/70 backdrop-blur-md">
       <div className="mx-auto flex max-w-[1400px] items-center gap-4 px-4 py-3 sm:px-6">
         <Link href="/" className="flex items-baseline gap-2 whitespace-nowrap">
-          <span className="font-display text-xl font-extrabold tracking-wider">ORBIT</span>
+          <span className="font-display text-lg font-extrabold tracking-wider">ORBIT</span>
           <span className="font-display text-xs font-semibold tracking-[0.3em] text-cyan">AI LAB</span>
         </Link>
 
@@ -33,8 +33,8 @@ export function Nav() {
                 key={p.href}
                 href={p.href}
                 aria-current={active ? "page" : undefined}
-                className={`rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-[0.14em] transition ${
-                  active ? "glow-ring bg-space-700 text-ink" : "text-ink-2 hover:text-ink"
+                className={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${
+                  active ? "bg-space-700 text-ink" : "text-ink-3 hover:text-ink"
                 }`}
               >
                 {p.label}

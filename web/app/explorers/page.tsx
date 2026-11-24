@@ -71,7 +71,7 @@ export default function ExplorersPage() {
               ["MOC", "Maximum Oxygen Concentration: the most oxygen in which a material still puts its own flame out."],
               ["Flame spread rate", "How fast a flame moves along a material, here in millimetres per second."],
             ].map(([t, d]) => (
-              <div key={t} className="rounded-2xl border border-line bg-space-900/60 p-4">
+              <div key={t} className="rounded-xl border border-line bg-space-900/60 p-4">
                 <dt className="font-semibold text-cyan">{t}</dt>
                 <dd className="mt-1 leading-relaxed text-ink-2">{d}</dd>
               </div>

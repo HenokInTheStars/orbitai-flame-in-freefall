@@ -74,7 +74,7 @@ export function StoryMode({ f }: { f: StoryFacts }) {
       <div className="grid items-center gap-8 lg:grid-cols-[1fr_minmax(0,380px)]">
         <div className="min-w-0" aria-live="polite">
           <div className="label text-cyan">{s.kicker}</div>
-          <h2 className="mt-2 font-display text-2xl font-extrabold leading-tight tracking-wide sm:text-3xl">{s.title}</h2>
+          <h2 className="mt-2 text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">{s.title}</h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-2">{s.body}</p>
           <p className="mt-4 text-[11px] text-ink-3">Source: {s.source}</p>
           <div className="mt-6 flex gap-3">

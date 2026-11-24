@@ -8,8 +8,8 @@ export function FlameVisual({ o2, compact = false }: { o2: number; compact?: boo
   const s = 0.75 + Math.min(Math.max((o2 - 15) / 25, 0), 1) * 0.5 // 0.75..1.25 visual scale
   const h = compact ? 150 : 200
   return (
-    <div className="grid grid-cols-2 gap-3">
-      <figure className="rounded-2xl border border-line bg-space-900/60 p-3 text-center">
+    <div className="grid grid-cols-2 content-start gap-3 self-start">
+      <figure className="rounded-xl border border-line bg-space-900/60 p-3 text-center">
         <svg viewBox="0 0 120 160" style={{ height: h }} className="mx-auto" role="img" aria-label="Illustration of a flame in Earth gravity: tall teardrop, yellow">
           <defs>
             <radialGradient id="fe" cx="50%" cy="75%" r="70%">
@@ -27,7 +27,7 @@ export function FlameVisual({ o2, compact = false }: { o2: number; compact?: boo
         </svg>
         <figcaption className="mt-1 text-xs text-ink-2"><span className="font-semibold text-earth">Earth (1 g)</span><br />Hot gas rises, pulls in fresh air</figcaption>
       </figure>
-      <figure className="rounded-2xl border border-line bg-space-900/60 p-3 text-center">
+      <figure className="rounded-xl border border-line bg-space-900/60 p-3 text-center">
         <svg viewBox="0 0 120 160" style={{ height: h }} className="mx-auto" role="img" aria-label="Illustration of a flame in microgravity: round, blue, dim">
           <defs>
             <radialGradient id="fs" cx="50%" cy="50%" r="50%">

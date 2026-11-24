@@ -23,7 +23,7 @@ export function OxygenSoak({ rows }: { rows: SoakRow[] }) {
   const over = data.filter((r) => r.exceeds_30_min_rule === "yes").length
 
   return (
-    <section id="oxygen-soak" className="panel scroll-mt-24 p-5 sm:p-6" aria-labelledby="soak-title">
+    <section id="oxygen-soak" className="panel scroll-mt-24 p-4 sm:p-5" aria-labelledby="soak-title">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <div className="label mb-1">Oxygen-soak timer</div>

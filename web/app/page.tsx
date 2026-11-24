@@ -41,22 +41,21 @@ export default function Home() {
   const maxInv = Math.max(...invList.map(([, v]) => v.record_count))
 
   return (
-    <div className="mt-4 grid gap-5 xl:grid-cols-[1fr_320px]">
-      <div className="grid min-w-0 gap-5">
+    <div className="mt-4 grid gap-4 2xl:grid-cols-[1fr_300px]">
+      <div className="grid min-w-0 gap-4">
         <HomeHero />
 
-        <section aria-label="Key numbers" className="grid gap-3 sm:grid-cols-2 2xl:grid-cols-4">
+        <section aria-label="Key numbers" className="grid gap-px overflow-hidden rounded-[14px] border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((s) => (
-            <div key={s.label} className="panel relative overflow-hidden p-5">
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/60 to-transparent" aria-hidden />
-              <div className="num text-3xl font-semibold text-ink">{s.value}</div>
+            <div key={s.label} className="bg-space-900 p-4 sm:p-5">
+              <div className="num text-2xl font-semibold text-cyan">{s.value}</div>
               <div className="mt-1 text-sm font-medium text-ink">{s.label}</div>
-              <p className="mt-1.5 text-xs leading-relaxed text-ink-3">{s.sub}</p>
+              <p className="mt-1 text-xs leading-relaxed text-ink-3">{s.sub}</p>
             </div>
           ))}
         </section>
 
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-3">
           <Panel className="panel-hover">
             <PanelHead kicker="Where the data is" title="Tests by gravity level" href="/scientists" />
             <ul className="grid gap-3">
@@ -103,8 +102,8 @@ export default function Home() {
         </div>
       </div>
 
-      <aside className="panel grid content-start gap-4 p-4" aria-label="AI insights">
-        <div className="flex items-center justify-center gap-2 py-1 text-sm font-semibold"><Sparkles size={15} className="text-cyan" /> What the data says</div>
+      <aside className="grid content-start gap-3 md:grid-cols-3 2xl:grid-cols-1" aria-label="What the data says">
+        <div className="flex items-center gap-2 px-1 text-sm font-semibold md:col-span-3 2xl:col-span-1"><Sparkles size={15} className="text-cyan" /> What the data says</div>
 
         <Insight
           kicker="Top finding"
@@ -130,7 +129,7 @@ export default function Home() {
           href="/investigation#unknowns"
           tone="warn"
         />
-        <p className="px-1 text-[10px] leading-relaxed text-ink-3">
+        <p className="px-1 text-[10px] leading-relaxed text-ink-3 md:col-span-3 2xl:col-span-1">
           Insights are computed from the data on build, not written by hand. Sources: Link et al. 2018; NTRS 20070018178 + 20110008636; NTRS 20260001966 p. 18.
         </p>
       </aside>
@@ -142,12 +141,12 @@ function Insight({ kicker, title, text, href, icon, tone }: { kicker: string; ti
   const toneCls = { cyan: "text-cyan border-cyan/30 bg-cyan/10", hazard: "text-hazard border-hazard/30 bg-hazard/10", warn: "text-warn border-warn/30 bg-warn/10" }[tone]
   return (
     <Link href={href} className="panel panel-hover group block overflow-hidden p-4">
-      <div className="flex items-start justify-between gap-2">
-        <span className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-medium ${toneCls}`}>{icon}{kicker}</span>
-        <span className="grid size-8 place-items-center rounded-full border border-line text-ink-2 group-hover:text-cyan"><ArrowUpRight size={15} /></span>
+      <div className="flex items-center justify-between gap-2">
+        <span className={`inline-flex items-center gap-1.5 rounded-full border px-2 py-0.5 text-[11px] font-medium ${toneCls}`}>{icon}{kicker}</span>
+        <ArrowUpRight size={15} className="text-ink-3 transition group-hover:text-cyan" />
       </div>
-      <div className="mt-3 font-semibold leading-snug">{title}</div>
-      <p className="mt-2 text-sm leading-relaxed text-ink-2">{text}</p>
+      <div className="mt-2.5 text-[15px] font-semibold leading-snug">{title}</div>
+      <p className="mt-1.5 text-[13px] leading-relaxed text-ink-2">{text}</p>
     </Link>
   )
 }

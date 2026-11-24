@@ -71,10 +71,10 @@ export function HabitatLab({ habitats, materials, pressureEffect, model1, model2
   return (
     <div className="grid gap-5">
       {/* Controls + flame */}
-      <section className="panel grid gap-6 p-5 sm:p-6 lg:grid-cols-[1fr_minmax(0,420px)]" aria-labelledby="lab-title">
+      <section className="panel grid gap-6 p-4 sm:p-5 lg:grid-cols-[1fr_minmax(0,420px)]" aria-labelledby="lab-title">
         <div className="min-w-0">
           <div className="label mb-1">Step 1</div>
-          <h2 id="lab-title" className="text-lg font-semibold">Choose a cabin atmosphere</h2>
+          <h2 id="lab-title" className="text-base font-semibold tracking-tight">Choose a cabin atmosphere</h2>
           <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Atmosphere presets">
             {usable.map((h) => (
               <button
@@ -82,7 +82,7 @@ export function HabitatLab({ habitats, materials, pressureEffect, model1, model2
                 type="button"
                 aria-pressed={preset === h.id}
                 onClick={() => choose(h)}
-                className={`rounded-full px-4 py-2 text-sm transition ${preset === h.id ? "glow-ring bg-space-700 text-ink" : "border border-line text-ink-2 hover:text-ink"}`}
+                className={`rounded-full px-3 py-1.5 text-[13px] transition ${preset === h.id ? "glow-ring bg-space-700 text-ink" : "border border-line text-ink-2 hover:text-ink"}`}
               >
                 {SHORT_NAME[h.id]} <span className="num text-ink-3">{h.o2_percent}% · {h.pressure_psia} psi</span>
               </button>
@@ -117,7 +117,7 @@ export function HabitatLab({ habitats, materials, pressureEffect, model1, model2
       </section>
 
       {/* #1 Stress test */}
-      <section id="stress-test" className="panel scroll-mt-24 p-5 sm:p-6" aria-labelledby="st-title">
+      <section id="stress-test" className="panel scroll-mt-24 p-4 sm:p-5" aria-labelledby="st-title">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
             <div className="label mb-1">Step 2 · Habitat stress test</div>
@@ -128,14 +128,14 @@ export function HabitatLab({ habitats, materials, pressureEffect, model1, model2
 
         <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
           {(["burns", "borderline", "self-extinguishes", "untested"] as StressStatus[]).map((s) => (
-            <div key={s} className={`rounded-2xl border px-4 py-3 ${STATUS_STYLE[s].cls}`}>
-              <div className="num text-3xl font-semibold">{count(s)}</div>
+            <div key={s} className={`rounded-lg border px-3.5 py-2.5 ${STATUS_STYLE[s].cls}`}>
+              <div className="num text-2xl font-semibold">{count(s)}</div>
               <div className="text-xs">{STATUS_STYLE[s].label}</div>
             </div>
           ))}
         </div>
 
-        <div className="mt-5 overflow-x-auto rounded-2xl border border-line">
+        <div className="mt-5 overflow-x-auto rounded-xl border border-line">
           <table className="w-full min-w-[640px] text-sm">
             <thead className="bg-space-800 text-left">
               <tr>
@@ -171,7 +171,7 @@ export function HabitatLab({ habitats, materials, pressureEffect, model1, model2
           </button>
         )}
 
-        <div className="mt-5 grid gap-3 rounded-2xl border border-line bg-space-900/60 p-4 text-sm leading-relaxed text-ink-2 md:grid-cols-2">
+        <div className="mt-5 grid gap-3 rounded-xl border border-line bg-space-900/60 p-4 text-sm leading-relaxed text-ink-2 md:grid-cols-2">
           <div>
             <div className="label mb-2">How the result is decided</div>
             <p><b className="text-ink">Limit (MOC)</b> = the highest O₂ % at which the material still puts itself out in NASA&apos;s Earth fire test (NASA-STD-6001 Test 1), measured at 10.2 psi.</p>
@@ -189,7 +189,7 @@ export function HabitatLab({ habitats, materials, pressureEffect, model1, model2
       </section>
 
       {/* Model predictions */}
-      <section className="panel p-5 sm:p-6" aria-labelledby="pred-title">
+      <section className="panel p-4 sm:p-5" aria-labelledby="pred-title">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
             <div className="label mb-1">Step 3 · AI prediction</div>
@@ -198,7 +198,7 @@ export function HabitatLab({ habitats, materials, pressureEffect, model1, model2
           <EstimateTag />
         </div>
         {!m1ok && (
-          <div className="mt-4 flex flex-wrap items-center gap-3 rounded-2xl border border-line bg-space-900/60 px-4 py-3 text-sm text-ink-2">
+          <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl border border-line bg-space-900/60 px-4 py-3 text-sm text-ink-2">
             The rod models were trained on {model1.valid_ranges.o2_percent.join("–")}% O₂, so they stay silent at {o2.toFixed(1)}%.
             <button type="button" onClick={() => { setO2(18.5); setPsia(14.7); setFlow(2); setPreset("custom") }} className="rounded-full border border-cyan/40 px-3 py-1.5 text-xs text-cyan hover:bg-cyan/10">
               Try 18.5% O₂, 14.7 psi, 2 cm/s
@@ -222,7 +222,7 @@ export function HabitatLab({ habitats, materials, pressureEffect, model1, model2
             note={vMicro == null ? rawMicro != null ? "The model gives no positive rate here (edge of its range), so no estimate is shown" : `No test data for these settings (ISS tests: ${vr.micro.flow_cm_s.join("–")} cm/s, ${vr.micro.o2_percent.join("–")}% O₂, rods ${vr.micro.rod_d_cm.join("–")} cm)` : "Model 2, ridge regression · R² 0.53"}
           />
         </div>
-        <div className="mt-4 rounded-2xl border border-cyan/25 bg-cyan/5 p-4 text-sm leading-relaxed text-ink-2">
+        <div className="mt-4 rounded-xl border border-cyan/25 bg-cyan/5 p-4 text-sm leading-relaxed text-ink-2">
           <span className="font-semibold text-cyan">Measured on the ISS: </span>
           {issLow != null
             ? `a ${rod} cm rod kept burning down to ${issLow}% O₂. There is no microgravity survival model because every ISS rod test kept burning, so there is no flame-out boundary to learn from.`
@@ -248,7 +248,7 @@ function Slider({ id, label, unit, min, max, step, value, onChange }: { id: stri
 
 function PredictionCard({ title, value, note }: { title: string; value: string | null; note: string }) {
   return (
-    <div className="rounded-2xl border border-line bg-space-900/60 p-4">
+    <div className="rounded-xl border border-line bg-space-900/60 p-4">
       <div className="text-sm text-ink-2">{title}</div>
       <div className={`num mt-2 text-3xl font-semibold ${value ? "text-ink" : "text-ink-3"}`}>{value ?? "—"}</div>
       <p className="mt-2 text-xs leading-relaxed text-ink-3">{note}</p>

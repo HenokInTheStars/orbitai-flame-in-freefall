@@ -65,7 +65,7 @@ export default function InvestigationPage() {
                 </li>
               ))}
             </ul>
-            <div className="mt-5 rounded-2xl border border-line bg-space-900/60 p-4 text-sm leading-relaxed text-ink-2">
+            <div className="mt-5 rounded-xl border border-line bg-space-900/60 p-4 text-sm leading-relaxed text-ink-2">
               <div className="mb-2 flex flex-wrap items-center gap-2"><span className="font-semibold text-ink">Model 3 trends</span><EstimateTag text="Associations, not cause and effect" /></div>
               Holding the rest equal, each +1 point of O₂ raises the burning rate by <span className="num text-ink">{c3.o2_percent.toFixed(3)}</span>; replacing nitrogen with CO₂ lowers it
               (<span className="num text-ink">{c3.co2_fraction.toFixed(3)}</span> per unit mole fraction) while helium raises it (<span className="num text-ink">+{c3.he_fraction.toFixed(3)}</span>). Burning rate is in
@@ -87,7 +87,7 @@ export default function InvestigationPage() {
         </section>
 
         {/* Known unknowns */}
-        <section id="unknowns" className="panel scroll-mt-24 p-5 sm:p-6" aria-labelledby="unk-title">
+        <section id="unknowns" className="panel scroll-mt-24 p-4 sm:p-5" aria-labelledby="unk-title">
           <div className="label mb-1">Known unknowns</div>
           <h2 id="unk-title" className="text-lg font-semibold"><Moon size={16} className="mr-2 inline text-warn" />No fire has ever been tested on the Moon</h2>
           <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-2">
@@ -97,7 +97,7 @@ export default function InvestigationPage() {
 
           <GravityAxis />
 
-          <div className="mt-5 overflow-x-auto rounded-2xl border border-line">
+          <div className="mt-5 overflow-x-auto rounded-xl border border-line">
             <table className="w-full min-w-[620px] text-sm">
               <thead className="bg-space-800 text-left">
                 <tr>
@@ -125,7 +125,7 @@ export default function InvestigationPage() {
             In these short tests the flames spread <b className="text-ink">slower</b> at Lunar gravity, but the fabric flame lasted about 45 s longer before going out. Slower is not safer:
             the question is whether a flame survives, and that is exactly what has not been measured on the Moon.
           </p>
-          <div className="mt-4 rounded-2xl border border-warn/30 bg-warn/5 p-4 text-sm text-ink-2">
+          <div className="mt-4 rounded-xl border border-warn/30 bg-warn/5 p-4 text-sm text-ink-2">
             <span className="font-semibold text-warn">Planned, not flown: </span>
             NASA&apos;s FM2 experiment will burn fabric samples on the Lunar surface at 8.2 psi in{" "}
             <span className="num text-ink">{fm2.map((r) => `${r.value}%`).join(", ")}</span> O₂ — the first fire experiment on another world.
@@ -148,7 +148,7 @@ function GravityAxis() {
   return (
     <div className="mt-5 grid gap-3 sm:grid-cols-4" role="list" aria-label="Data coverage by gravity level">
       {stops.map((s) => (
-        <div key={s.g} role="listitem" className="rounded-2xl border border-line bg-space-900/60 p-4">
+        <div key={s.g} role="listitem" className="rounded-xl border border-line bg-space-900/60 p-4">
           <div className={`mb-3 h-1.5 rounded-full ${s.cls}`} />
           <div className="num text-xs text-ink-3">{s.g}</div>
           <div className="font-semibold">{s.label}</div>

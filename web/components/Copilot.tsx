@@ -118,9 +118,9 @@ export function Copilot() {
         <button
           type="button"
           onClick={() => show(true)}
-          className="glow-ring fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-space-700 px-5 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-ink shadow-lg"
+          className="btn btn-primary fixed bottom-5 right-5 z-50 shadow-lg shadow-black/40"
         >
-          <Sparkles size={16} className="text-cyan" /> Ask the data
+          <Sparkles size={16} /> Ask the data
         </button>
       )}
 
@@ -153,14 +153,14 @@ export function Copilot() {
             {msgs.length === 0 && (
               <div className="grid gap-2">
                 {here.qs.map((s) => (
-                  <button key={s} type="button" onClick={() => ask(s)} className="rounded-2xl border border-line px-3 py-2 text-left text-xs text-ink-2 hover:border-cyan/40 hover:text-ink">
+                  <button key={s} type="button" onClick={() => ask(s)} className="rounded-xl border border-line px-3 py-2 text-left text-xs text-ink-2 hover:border-cyan/40 hover:text-ink">
                     {s}
                   </button>
                 ))}
               </div>
             )}
             {msgs.map((m, i) => (
-              <div key={i} className={`rounded-2xl px-4 py-3 text-sm leading-relaxed ${m.role === "user" ? "ml-auto max-w-[90%] bg-space-700" : "border border-line bg-space-900/60"}`}>
+              <div key={i} className={`rounded-xl px-4 py-3 text-sm leading-relaxed ${m.role === "user" ? "ml-auto max-w-[90%] bg-space-700" : "border border-line bg-space-900/60"}`}>
                 <div className="whitespace-pre-wrap">{m.text}</div>
                 {m.sources && m.sources.length > 0 && (
                   <ul className="mt-3 grid gap-1 border-t border-line pt-2 text-[11px] text-ink-3">

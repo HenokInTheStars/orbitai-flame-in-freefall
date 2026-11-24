@@ -13,37 +13,37 @@ export function HomeHero() {
   const site = SITES.find((s) => s.id === selected) ?? SITES[0]
 
   return (
-    <div className="panel relative overflow-hidden p-5 sm:p-8">
-      <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)]">
+    <div className="panel relative overflow-hidden p-5 sm:p-7">
+      <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
         <div className="relative z-10 min-w-0">
           <div className="label mb-3 text-cyan">NASA Space Apps 2026 · Flame in Freefall</div>
-          <h1 className="font-display text-4xl font-extrabold leading-[1.05] tracking-wide sm:text-5xl">
+          <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl">
             <span className="whitespace-nowrap">Earth-safe</span> <span className="text-earth">isn&apos;t</span> <span className="whitespace-nowrap">space-safe.</span>
           </h1>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-ink-2">
+          <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-ink-2">
             NASA checks spacecraft materials with a fire test done here on Earth. But experiments on the space station show
             flames can survive on less oxygen in space, and future Moon habitats will breathe oxygen-richer air. We turned
             NASA&apos;s space fire experiments into an interactive dashboard that shows where the risk is, and says
             plainly where nobody has data yet.
           </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/investigation" className="glow-ring rounded-full bg-space-700 px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em]">
+          <div className="mt-5 flex flex-wrap gap-2.5">
+            <Link href="/investigation" className="btn btn-primary">
               Stress-test a habitat
             </Link>
-            <Link href="/explorers" className="rounded-full border border-line px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-ink-2 hover:text-ink">
+            <Link href="/explorers" className="btn btn-ghost">
               Take the 2-minute tour
             </Link>
           </div>
 
           <form
-            className="mt-8 flex items-center gap-2 rounded-full border border-line bg-space-900/80 p-1.5 pl-2"
+            className="mt-6 flex max-w-md items-center gap-2 rounded-full border border-line bg-space-900/70 p-1 pl-1.5"
             onSubmit={(e) => {
               e.preventDefault()
               openCopilot(q)
               setQ("")
             }}
           >
-            <span className="grid size-9 shrink-0 place-items-center rounded-full bg-space-700 text-cyan">
+            <span className="grid size-8 shrink-0 place-items-center rounded-full text-cyan">
               <Sparkles size={16} />
             </span>
             <label htmlFor="home-ask" className="sr-only">Ask the copilot</label>
@@ -54,7 +54,7 @@ export function HomeHero() {
               placeholder="Ask about ignition, flame spread, suppression…"
               className="min-w-0 flex-1 bg-transparent text-sm text-ink placeholder:text-ink-3 focus:outline-none"
             />
-            <button type="submit" aria-label="Ask" className="grid size-9 shrink-0 place-items-center rounded-full border border-line text-ink-2 hover:text-cyan">
+            <button type="submit" aria-label="Ask" className="grid size-8 shrink-0 place-items-center rounded-full bg-space-700 text-ink-2 hover:text-cyan">
               <ArrowUp size={16} />
             </button>
           </form>

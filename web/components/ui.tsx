@@ -3,7 +3,7 @@ import { ArrowUpRight, Info, TriangleAlert } from "lucide-react"
 
 export function Panel({ children, className = "", id }: { children: React.ReactNode; className?: string; id?: string }) {
   return (
-    <section id={id} className={`panel p-5 sm:p-6 ${className}`}>
+    <section id={id} className={`panel p-4 sm:p-5 ${className}`}>
       {children}
     </section>
   )
@@ -11,14 +11,14 @@ export function Panel({ children, className = "", id }: { children: React.ReactN
 
 export function PanelHead({ title, kicker, href }: { title: string; kicker?: string; href?: string }) {
   return (
-    <div className="mb-4 flex items-start justify-between gap-3">
+    <div className="mb-3 flex items-start justify-between gap-3">
       <div className="min-w-0">
-        {kicker && <div className="label mb-1">{kicker}</div>}
-        <h2 className="text-lg font-semibold leading-snug">{title}</h2>
+        {kicker && <div className="label mb-0.5">{kicker}</div>}
+        <h2 className="text-base font-semibold leading-snug tracking-tight">{title}</h2>
       </div>
       {href && (
-        <Link href={href} aria-label={`Open ${title}`} className="grid size-10 shrink-0 place-items-center rounded-full border border-line bg-space-800 text-ink-2 hover:text-cyan">
-          <ArrowUpRight size={17} />
+        <Link href={href} aria-label={`Open ${title}`} className="grid size-7 shrink-0 place-items-center rounded-full text-ink-3 hover:bg-space-700 hover:text-cyan">
+          <ArrowUpRight size={16} />
         </Link>
       )}
     </div>
@@ -27,7 +27,7 @@ export function PanelHead({ title, kicker, href }: { title: string; kicker?: str
 
 /** Small "where this number comes from" line. Every data panel ends with one. */
 export function Source({ children }: { children: React.ReactNode }) {
-  return <p className="mt-4 border-t border-line pt-3 text-[11px] leading-relaxed text-ink-3">Source: {children}</p>
+  return <p className="mt-3 border-t border-line pt-2.5 text-[11px] leading-relaxed text-ink-3">Source: {children}</p>
 }
 
 /** Required on every model output (CLAUDE.md: label any estimate as an estimate). */
@@ -57,10 +57,10 @@ export function Hazard({ children }: { children: React.ReactNode }) {
 
 export function PageTitle({ kicker, title, lede }: { kicker: string; title: string; lede: string }) {
   return (
-    <div className="mb-8 mt-6 max-w-3xl">
-      <div className="label mb-2 text-cyan">{kicker}</div>
-      <h1 className="font-display text-3xl font-extrabold leading-tight tracking-wide sm:text-4xl">{title}</h1>
-      <p className="mt-3 text-base leading-relaxed text-ink-2">{lede}</p>
+    <div className="mb-6 mt-4 max-w-3xl">
+      <div className="label mb-1.5 text-cyan">{kicker}</div>
+      <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">{title}</h1>
+      <p className="mt-2.5 text-[15px] leading-relaxed text-ink-2">{lede}</p>
     </div>
   )
 }
@@ -69,7 +69,7 @@ export function Stat({ value, label, tone = "ink" }: { value: string; label: str
   const color = { ink: "text-ink", cyan: "text-cyan", earth: "text-earth", hazard: "text-hazard" }[tone]
   return (
     <div className="min-w-0">
-      <div className={`num text-3xl font-semibold ${color}`}>{value}</div>
+      <div className={`num text-2xl font-semibold ${color}`}>{value}</div>
       <div className="mt-1 text-xs leading-snug text-ink-2">{label}</div>
     </div>
   )

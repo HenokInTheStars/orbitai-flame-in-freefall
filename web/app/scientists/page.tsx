@@ -87,7 +87,7 @@ export default function ScientistsPage() {
               <PanelHead kicker="Saffire-II · same sample, two gravities" title="Is microgravity always worse? No." />
               <MeasuredTag />
             </div>
-            <div className="overflow-x-auto rounded-2xl border border-line">
+            <div className="overflow-x-auto rounded-xl border border-line">
               <table className="w-full min-w-[460px] text-sm">
                 <thead className="bg-space-800 text-left">
                   <tr>
@@ -117,7 +117,7 @@ export default function ScientistsPage() {
             <PanelHead kicker="Models" title="How we predict, and how well" />
             <EstimateTag text="All predictions are estimates" />
           </div>
-          <div className="overflow-x-auto rounded-2xl border border-line">
+          <div className="overflow-x-auto rounded-xl border border-line">
             <table className="w-full min-w-[720px] text-sm">
               <thead className="bg-space-800 text-left">
                 <tr>
@@ -154,7 +154,7 @@ export default function ScientistsPage() {
           <div className="mt-5 grid gap-5 lg:grid-cols-2">
             <div>
               <div className="label mb-2">Model 1 · each test round</div>
-              <div className="overflow-x-auto rounded-2xl border border-line">
+              <div className="overflow-x-auto rounded-xl border border-line">
                 <table className="w-full text-sm">
                   <thead className="bg-space-800 text-left"><tr><th className="label px-3 py-2">Rod held out</th><th className="label px-3 py-2 text-right">Accuracy</th><th className="label px-3 py-2 text-right">Flame-outs caught</th><th className="label px-3 py-2 text-right">False alarms</th></tr></thead>
                   <tbody>
