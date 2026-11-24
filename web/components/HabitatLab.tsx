@@ -115,7 +115,25 @@ export function HabitatLab({ habitats, materials, pressureEffect, model1, model2
             Oxygen actually reaching the lungs (partial pressure): <span className="num text-ink-2">{((o2 / 100) * psia).toFixed(2)} psi</span>. Presets from NTRS 20150021491, pp. 4–6.
           </p>
         </div>
-        <FlameVisual o2={o2} />
+        <div className="grid content-start gap-3 self-start">
+          <FlameVisual o2={o2} flow={flow} />
+          {/* Live result, so every slider change is visible without scrolling */}
+          <a href="#stress-test" className="group grid gap-2 rounded-xl border border-line bg-space-900/60 p-3 text-sm transition hover:border-cyan/40" aria-live="polite">
+            <div className="label">At these settings</div>
+            <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+              <span><b className="num text-lg text-hazard">{count("burns")}</b> <span className="text-ink-2">of {materials.length} materials burn</span></span>
+              <span><b className="num text-lg text-warn">{count("borderline")}</b> <span className="text-ink-2">borderline</span></span>
+              {count("untested") > 0 && <span><b className="num text-lg text-ink-2">{count("untested")}</b> <span className="text-ink-3">no test data</span></span>}
+            </div>
+            <div className="text-xs text-ink-3">
+              {pEarth == null
+                ? `Earth rod flame: outside the model's tested range (${model1.valid_ranges.o2_percent.join("–")}% O₂)`
+                : `Earth rod flame keeps burning: ${Math.round(pEarth * 100)}% chance (estimate)`}
+              {" · "}Pressure changes the material limits, not this picture
+            </div>
+            <div className="text-xs text-cyan group-hover:underline">See which materials ↓</div>
+          </a>
+        </div>
       </section>
 
       {/* #1 Stress test */}
